@@ -13,30 +13,30 @@
 	    <title>My Account</title>
 
 	    <!-- Bootstrap Core CSS -->
-	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="resources/views/assets/css/bootstrap.min.css">
 	    
 	    <!-- Customizable CSS -->
-	    <link rel="stylesheet" href="assets/css/main.css">
-	    <link rel="stylesheet" href="assets/css/green.css">
-	    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-		<link rel="stylesheet" href="assets/css/owl.transitions.css">
+	    <link rel="stylesheet" href="resources/views/assets/css/main.css">
+	    <link rel="stylesheet" href="resources/views/assets/css/green.css">
+	    <link rel="stylesheet" href="resources/views/assets/css/owl.carousel.css">
+		<link rel="stylesheet" href="resources/views/assets/css/owl.transitions.css">
 		<!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
-		<link href="assets/css/lightbox.css" rel="stylesheet">
-		<link rel="stylesheet" href="assets/css/animate.min.css">
-		<link rel="stylesheet" href="assets/css/rateit.css">
-		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+		<link href="resources/views/assets/css/lightbox.css" rel="stylesheet">
+		<link rel="stylesheet" href="resources/views/assets/css/animate.min.css">
+		<link rel="stylesheet" href="resources/views/assets/css/rateit.css">
+		<link rel="stylesheet" href="resources/views/assets/css/bootstrap-select.min.css">
 
 		<!-- Demo Purpose Only. Should be removed in production -->
-		<link rel="stylesheet" href="assets/css/config.css">
+		<link rel="stylesheet" href="resources/views/assets/css/config.css">
 
-		<link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
-		<link href="assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
-		<link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
-		<link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
-		<link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link href="resources/views/assets/css/green.css" rel="alternate stylesheet" title="Green color">
+		<link href="resources/views/assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
+		<link href="resources/views/assets/css/red.css" rel="alternate stylesheet" title="Red color">
+		<link href="resources/views/assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
+		<link href="resources/views/assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
+		<link rel="stylesheet" href="resources/views/assets/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
+		<link rel="shortcut icon" href="resources/views/assets/images/favicon.ico">
 
 	</head>
     <body class="cnt-home">
@@ -315,53 +315,53 @@
 			<div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/aoc.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/aoc.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div><!--/.item-->
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/bajaj.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/bajaj.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div><!--/.item-->
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/blackberry.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/blackberry.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div><!--/.item-->
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/canon.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/canon.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/compas.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/compas.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/daikin.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/daikin.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/dell.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/dell.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 <div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/samsung.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/samsung.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/hcl.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/hcl.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 
@@ -369,25 +369,25 @@
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/sony.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/sony.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/voltas.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/voltas.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/lg.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/lg.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 
 				<div class="item">
 					<a href="#" class="image">
-						<img data-echo="brandsimage/lenovo.jpg" src="assets/images/blank.gif" alt="">
+						<img data-echo="resources/views/brandsimage/lenovo.jpg" src="resources/views/assets/images/blank.gif" alt="">
 					</a>	
 				</div>
 
@@ -510,21 +510,21 @@
     </div><!-- /.links-social -->
 
     
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script src="resources/views/assets/js/jquery-1.11.1.min.js"></script>
 	
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="resources/views/assets/js/bootstrap.min.js"></script>
 	
-	<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
-	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="resources/views/assets/js/bootstrap-hover-dropdown.min.js"></script>
+	<script src="resources/views/assets/js/owl.carousel.min.js"></script>
 	
-	<script src="assets/js/echo.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
-	<script src="assets/js/bootstrap-slider.min.js"></script>
-    <script src="assets/js/jquery.rateit.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightbox.min.js"></script>
-    <script src="assets/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/scripts.js"></script>
+	<script src="resources/views/assets/js/echo.min.js"></script>
+	<script src="resources/views/assets/js/jquery.easing-1.3.min.js"></script>
+	<script src="resources/views/assets/js/bootstrap-slider.min.js"></script>
+    <script src="resources/views/assets/js/jquery.rateit.min.js"></script>
+    <script type="text/javascript" src="resources/views/assets/js/lightbox.min.js"></script>
+    <script src="resources/views/assets/js/bootstrap-select.min.js"></script>
+    <script src="resources/views/assets/js/wow.min.js"></script>
+	<script src="resources/views/assets/js/scripts.js"></script>
 
 	<!-- For demo purposes – can be removed on production -->
 	

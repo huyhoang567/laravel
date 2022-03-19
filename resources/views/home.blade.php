@@ -24,13 +24,13 @@
 <div id="hero" class="homepage-slider3">
 	<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
 		<div class="full-width-slider">	
-			<div class="item" style="background-image: url(assets/images/sliders/slider1.png);">
+			<div class="item" style="background-image: url(resources/views/assets/images/sliders/slider1.png);">
 				<!-- /.container-fluid -->
 			</div><!-- /.item -->
 		</div><!-- /.full-width-slider -->
 	    
 	    <div class="full-width-slider">
-			<div class="item full-width-slider" style="background-image: url(assets/images/sliders/slider2.png);">
+			<div class="item full-width-slider" style="background-image: url(resources/views/assets/images/sliders/slider2.png);">
 			</div><!-- /.item -->
 		</div><!-- /.full-width-slider -->
 
