@@ -30,7 +30,7 @@
 </ul>
     </nav>
 </div>
-</div><!-- /.side-menu -->
+</div>
 <!-- ================================== TOP NAVIGATION : END ================================== -->	            <div class="sidebar-module-container">
 	            	<h3 class="section-title">shop by</h3>
 	            	<div class="sidebar-filter">
@@ -165,7 +165,8 @@
 				</div><!-- /.search-result-container -->
 
 			</div><!-- /.col -->
-		</div></div>
+		</div>
+	<!-- </div> -->
     @endsection
 </body>
 </html>

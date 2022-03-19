@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Admin| Pending Orders</title>
-	<link type="text/css" href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link type="text/css" href="../css/theme.css" rel="stylesheet">
-	<link type="text/css" href="../images/icons/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" href="../admin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="../admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="../admin/css/theme.css" rel="stylesheet">
+	<link type="text/css" href="../admin/images/icons/css/font-awesome.css" rel="stylesheet">
 	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 	<script language="javascript" type="text/javascript">
 var popUpWin=0;
@@ -41,7 +41,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 						</a></li>
 						<li class="nav-user dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img src="../images/user.png" class="nav-avatar" />
+								<img src="images/user.png" class="nav-avatar" />
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
@@ -194,11 +194,12 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 		</div>
 	</div>
 
-	<script src="../scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script src="../scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-	<script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="../scripts/flot/jquery.flot.js" type="text/javascript"></script>
-	<script src="../scripts/datatables/jquery.dataTables.js"></script>
+	<script src="../admin/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="../admin/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+	<script src="../admin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../admin/scripts/flot/jquery.flot.js" type="text/javascript"></script>
+	<script src="../admin/scripts/datatables/jquery.dataTables.js"></script>
+	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function() {
 			$('.datatable-1').dataTable();
