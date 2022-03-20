@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Helpers\CartHelper;
-use DB;
+// use App\Helpers\CartHelper;
 use Validator;
 
 class HomeController extends Controller {
