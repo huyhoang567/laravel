@@ -1,6 +1,6 @@
 
 
-## Tạo db migrations - Thịnh
+## Task 1 - Tạo db migrations - Thịnh
 
 Mở file shoping.sql trong project, thực hiện tạo các migrations tương ứng cho các bảng.
 
