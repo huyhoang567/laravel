@@ -9,12 +9,8 @@
 		<meta name="author" content="">
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
-
-	    <title>My Account</title>
-
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="resources/views/assets/css/bootstrap.min.css">
-	    
 	    <!-- Customizable CSS -->
 	    <link rel="stylesheet" href="resources/views/assets/css/main.css">
 	    <link rel="stylesheet" href="resources/views/assets/css/green.css">
@@ -25,10 +21,8 @@
 		<link rel="stylesheet" href="resources/views/assets/css/animate.min.css">
 		<link rel="stylesheet" href="resources/views/assets/css/rateit.css">
 		<link rel="stylesheet" href="resources/views/assets/css/bootstrap-select.min.css">
-
 		<!-- Demo Purpose Only. Should be removed in production -->
 		<link rel="stylesheet" href="resources/views/assets/css/config.css">
-
 		<link href="resources/views/assets/css/green.css" rel="alternate stylesheet" title="Green color">
 		<link href="resources/views/assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
 		<link href="resources/views/assets/css/red.css" rel="alternate stylesheet" title="Red color">
@@ -37,11 +31,11 @@
 		<link rel="stylesheet" href="resources/views/assets/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="resources/views/assets/images/favicon.ico">
-
+		{{-- Tittle --}}
+		<title>{{ $title }}</title>
 	</head>
     <body class="cnt-home">
 		<header class="header-style-1">
-
 			<!-- ============================================== TOP MENU ============================================== -->
 			@include('Includes.top-menu')
 			<!-- ============================================== TOP-MENU : END ============================================== -->
@@ -51,23 +45,8 @@
 			<!-- ============================================== BOTTOM-MENU ============================================== -->
 			@include('Includes.bottom-menu')
 			<!-- ============================================== BOTTOM-MENU : END ============================================== -->
-
 		</header>
 <!-- ============================================== HEADER : END ============================================== -->
-
-	{{-- <div class="body-content outer-top-xs" id="top-banner-and-menu">
-		<div class="container">
-			<div class="furniture-container homepage-container">
-				<div class="row">
-
-					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 sidebar"> --}}
-						<!-- ================================== TOP NAVIGATION ================================== -->
-						{{-- @include('Includes.side-bar') --}}
-						<!-- ================================== TOP NAVIGATION : END ================================== -->
-					{{-- </div><!-- /.sidemenu-holder --> --}}
-
-					{{-- <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 homebanner-holder"> --}}
-						<!-- ========================================== SECTION – HERO ========================================= -->
 						
 							@yield('home')											
 							@yield('category')				
@@ -84,12 +63,7 @@
 							@yield('search-result')
 							@yield('sub-category')
 							@yield('track-orders')
-						{{-- </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> --}}
+
 
 <!-- ============================================== TOP-FOOTER ============================================== -->
 @include("Includes.center-menu")

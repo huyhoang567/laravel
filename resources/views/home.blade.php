@@ -4,30 +4,29 @@
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
 <div class="container">
 	<div class="furniture-container homepage-container">
-	<div class="row">
-	
-		<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
-			@include('Includes.side-bar')
-		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+				@include('Includes.side-bar')
+			</div>
 		
-		<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
+			<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
 			<!-- ========================================== SECTION – HERO ========================================= -->
 			
-<div id="hero" class="homepage-slider3">
-	<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-		<div class="full-width-slider">	
-			<div class="item" style="background-image: url(resources/views/assets/images/sliders/slider1.png);">
-				<!-- /.container-fluid -->
-			</div><!-- /.item -->
-		</div><!-- /.full-width-slider -->
-	    
-	    <div class="full-width-slider">
-			<div class="item full-width-slider" style="background-image: url(resources/views/assets/images/sliders/slider2.png);">
-			</div><!-- /.item -->
-		</div><!-- /.full-width-slider -->
+				<div id="hero" class="homepage-slider3">
+					<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+						<div class="full-width-slider">	
+							<div class="item" style="background-image: url(resources/views/assets/images/sliders/slider1.png);">
+								<!-- /.container-fluid -->
+							</div><!-- /.item -->
+						</div><!-- /.full-width-slider -->
+						
+						<div class="full-width-slider">
+							<div class="item full-width-slider" style="background-image: url(resources/views/assets/images/sliders/slider2.png);">
+							</div><!-- /.item -->
+						</div><!-- /.full-width-slider -->
 
-	</div><!-- /.owl-carousel -->
-</div>
+					</div><!-- /.owl-carousel -->
+				</div>
 			
 <!-- ========================================= SECTION – HERO : END ========================================= -->	
 				<!-- ============================================== INFO BOXES ============================================== -->

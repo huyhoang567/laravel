@@ -14,7 +14,7 @@
 					<div class="nav-outer">
 						<ul class="navbar-nav nav">
 							<li class="nav-item active dropdown yamm-fw">
-								<a class="nav-link" href="#">Home</a>
+								<a class="nav-link" href="home">Home</a>
 							</li>
 							<li class="nav-item dropdown yamm">
 								<a class="nav-link" href="about">About Us</a>
