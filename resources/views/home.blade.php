@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    @extends('Templates.mytemplate')
-    @section('home')
-    <div class="body-content outer-top-xs" id="top-banner-and-menu">
-	<div class="container">
-		<div class="furniture-container homepage-container">
-		<div class="row">
-		
-			<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
 
-			</div><!-- /.sidemenu-holder -->	
-			
-			<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
-				<!-- ========================================== SECTION – HERO ========================================= -->
+@extends('Templates.mytemplate')
+@section('home')
+<div class="body-content outer-top-xs" id="top-banner-and-menu">
+<div class="container">
+	<div class="furniture-container homepage-container">
+	<div class="row">
+	
+		<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+			@include('Includes.side-bar')
+		</div>
+		
+		<div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
+			<!-- ========================================== SECTION – HERO ========================================= -->
 			
 <div id="hero" class="homepage-slider3">
 	<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
@@ -415,5 +407,3 @@
 							</div>
 		</section>
     @endsection
-</body>
-</html>
