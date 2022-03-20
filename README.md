@@ -106,6 +106,9 @@ Tên bảng:
   `postingDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 )]
 
+Sau khi tạo bảng insert dữ liệu cho các bảng bằng SQL trong phpMyAdmin - dữ liệu trong file shopping.sql
+
+
 
 ## Learning Laravel
 
