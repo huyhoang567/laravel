@@ -4,19 +4,21 @@
 
         <ul class="nav">
             <li class="dropdown menu-item">
-                
-                <a href="category.php?cid=" class="dropdown-toggle">
+                @foreach($category as $row)
+                <a href="category.php?id={{$row->id}}" class="dropdown-toggle">
+                    <i class="icon fa fa-desktop fa-fw"></i>
+                        <!-- Sud sidebar -->
+                        {{$row->categoryName}}
+                </a>
+                @endforeach
+                <!-- <a href="category.php?cid=" class="dropdown-toggle">
                     <i class="icon fa fa-desktop fa-fw"></i>
                         Sud sidebar
                 </a>
                 <a href="category.php?cid=" class="dropdown-toggle">
                     <i class="icon fa fa-desktop fa-fw"></i>
                         Sud sidebar
-                </a>
-                <a href="category.php?cid=" class="dropdown-toggle">
-                    <i class="icon fa fa-desktop fa-fw"></i>
-                        Sud sidebar
-                </a>
+                </a> -->
             </li>
         </ul>
     </nav>
