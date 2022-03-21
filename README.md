@@ -117,11 +117,23 @@ Tên bảng:
 )]
 
 Sau khi tạo bảng insert dữ liệu cho các bảng bằng SQL trong phpMyAdmin - dữ liệu trong file shopping.sql
-
+Trạng thái: Xong
 
 
 ## Task 2 - Xuất dữ liệu cho trang Home - Hoàng
 
-- Thực hiện trong file views/home.blade.php và controllers/HomeController.php
-- Lấy dữ liệu từ bảng products liên kết bảng category, xuất dữ liệu với từng category trên giao diện Home. Chú ý: xem trong CSDL
+- Thực hiện trong file views/home.blade.php, views/Includes/side-bar.blade.php và controllers/HomeController.php
+- Lấy dữ liệu từ bảng products liên kết bảng category, xuất dữ liệu với từng category trên giao diện Home. 
+- Lấy dữ liệu từ bảng category liên kết bảng subcategory xuất dữ liệu cho sidebar menu.
+- Chú ý: import csdl vào phpMyAdmin, file myproject1.sql trong source code. Nội dung dữ liệu trong csdl sẽ chỉnh sửa sau.
 <img src='https://firebasestorage.googleapis.com/v0/b/melodic-stone-338516.appspot.com/o/laravel%2Ftask2.PNG?alt=media&token=9fe49de2-9d31-4a3f-b627-38002186f930'>
+
+## Task 3 - Effect login - Thịnh
+- Khai báo một class tự định nghĩa là User trong thư mục helpers để quản lý trạng thái đăng nhập.
+- Sử dụng biến siêu toàn cục $_SESSION['user'] để lưu thông tin người đăng nhập
+- Thực hiện: 
+ + Khai báo một phương thức tĩnh trả về boolean nếu tồn tại $_SESSION['user']
+ + Khai báo phương thức setUser() để gán thông tin đăng nhập và $_SESION
+ + Khai báo các phương thức get thông tin người đăng nhập, xem bảng users trong CSDL để lấy tên trường.
+ + Sử dụng trực tiếp class trên trong file views/Includes/top-menu.blade.php mà không cần qua controller để ẩn hiện nút Đăng nhập, Đăng xuất.
+- Đây là task demo - không cần phải làm được, làm được thì càng tốt.

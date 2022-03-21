@@ -11,10 +11,10 @@
 					<li><a href="my-wishlist.php"><i class="icon fa fa-heart"></i>Sản phẩm yêu thích</a></li>
 					<li><a href="my-cart.php"><i class="icon fa fa-shopping-cart"></i>Giỏ hàng</a></li>
 
-<li><a href="login.php"><i class="icon fa fa-sign-in"></i>Đăng nhập</a></li>
+					<li><a href="login"><i class="icon fa fa-sign-in"></i>Đăng nhập</a></li>
 
 	
-				<li><a href="logout.php"><i class="icon fa fa-sign-out"></i>Đăng xuất</a></li>
+					<li><a href="logout"><i class="icon fa fa-sign-out"></i>Đăng xuất</a></li>
 				</ul>
 			</div><!-- /.cnt-account -->
 
