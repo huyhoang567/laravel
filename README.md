@@ -114,4 +114,4 @@ Sau khi tạo bảng insert dữ liệu cho các bảng bằng SQL trong phpMyAd
 
 - Thực hiện trong file views/home.blade.php và controllers/HomeController.php
 - Lấy dữ liệu từ bảng products liên kết bảng category, xuất dữ liệu với từng category trên giao diện Home. Chú ý: xem trong CSDL
-<img src='/public/images/task2.png'>
+<img src='https://firebasestorage.googleapis.com/v0/b/melodic-stone-338516.appspot.com/o/laravel%2Ftask2.PNG?alt=media&token=9fe49de2-9d31-4a3f-b627-38002186f930'>
