@@ -137,3 +137,4 @@ Trạng thái: Xong
  + Khai báo các phương thức get thông tin người đăng nhập, xem bảng users trong CSDL để lấy tên trường.
  + Sử dụng trực tiếp class trên trong file views/Includes/top-menu.blade.php mà không cần qua controller để ẩn hiện nút Đăng nhập, Đăng xuất.
 - Đây là task demo - không cần phải làm được, làm được thì càng tốt.
+- Tham khảo: https://itzone.com.vn/vi/article/macroable-laravel-classes/
