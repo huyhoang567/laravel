@@ -2,7 +2,7 @@
 // use Illuminate\Support\Facades\DB;
 namespace App\Http\Controllers;
 
-class CartHelper extends Controllers {
+class CartHelper {
 
     public static function exists() {
         if(empty($_SESSION['cart']))
