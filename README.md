@@ -1,6 +1,14 @@
 
 ## ---------------------------------------------------------------
-User: Hiển thị danh sách sản phẩm cùng tính năng tìm kiếm, bộ lọc. Khách hàng chọn sản phẩm vào giỏ hàng mà không cần đăng nhập. Khách hàng nhấn đặt hàng thì yêu cầu nhập số điện thoại và địa chỉ để phía admin gọi xác nhận                                                           Admin: Quản lý đơn hàng(đang chờ, đang giao, đã giao). Tìm kiếm đơn hàng theo số điện thoại. Hiển thị đơn hàng ngày hiện tại, cập nhật đơn hàng mỗi 1 phút. Lọc hóa đơn theo ngày. Thống kê đơn hàng.
+- User: 
+  Hiển thị danh sách sản phẩm cùng tính năng tìm kiếm, bộ lọc. 
+  Khách hàng chọn sản phẩm vào giỏ hàng mà không cần đăng nhập. 
+  Khách hàng nhấn đặt hàng thì yêu cầu nhập số điện thoại và địa chỉ để phía admin gọi xác nhận                                                           
+- Admin: 
+  Quản lý đơn hàng(đang chờ, đang giao, đã giao). 
+  Tìm kiếm đơn hàng theo số điện thoại. Hiển thị đơn hàng ngày hiện tại, cập nhật đơn hàng mỗi 1 phút. 
+  Lọc hóa đơn theo ngày. 
+  Thống kê đơn hàng.
 ## ---------------------------------------------------------------
 ## Task 1 - Tạo db migrations - Thịnh
 
