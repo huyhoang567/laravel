@@ -130,10 +130,10 @@ Trạng thái: Xong
 
 ## Task 3 - Effect login - Thịnh
 - Khai báo một class tự định nghĩa là User trong thư mục app/helpers để quản lý trạng thái đăng nhập.
-- Sử dụng biến siêu toàn cục $_SESSION['user'] để lưu thông tin người đăng nhập
+- Sử dụng class Iluminate\Support\Facades\Session để lưu thông tin người đăng nhập
 - Thực hiện: 
- + Khai báo một phương thức tĩnh trả về boolean nếu tồn tại $_SESSION['user']
- + Khai báo phương thức setUser() để gán thông tin đăng nhập và $_SESION
+ + Khai báo một phương thức tĩnh trả về boolean nếu tồn tại Session user
+ + Khai báo phương thức setUser() để gán thông tin đăng nhập
  + Khai báo các phương thức get thông tin người đăng nhập, xem bảng users trong CSDL để lấy tên trường.
  + Sử dụng trực tiếp class trên trong file views/Includes/top-menu.blade.php mà không cần qua controller để ẩn hiện nút Đăng nhập, Đăng xuất.
 - Đây là task demo - không cần phải làm được, làm được thì càng tốt.
