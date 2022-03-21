@@ -114,4 +114,4 @@ Sau khi tạo bảng insert dữ liệu cho các bảng bằng SQL trong phpMyAd
 
 - Thực hiện trong file views/home.blade.php và controllers/HomeController.php
 - Lấy dữ liệu từ bảng products liên kết bảng category, xuất dữ liệu với từng category trên giao diện Home. Chú ý: có 4 category(Books)
-![Optional Text](https://github.com/huyhoang567/laravel/tree/main/public/images/task2.png)
+<img src='https://github.com/huyhoang567/laravel/tree/main/public/images/task2.png'>
