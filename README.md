@@ -129,7 +129,7 @@ Trạng thái: Xong
 <img src='https://firebasestorage.googleapis.com/v0/b/melodic-stone-338516.appspot.com/o/laravel%2Ftask2.PNG?alt=media&token=9fe49de2-9d31-4a3f-b627-38002186f930'>
 
 ## Task 3 - Effect login - Thịnh
-- Khai báo một class tự định nghĩa là User trong thư mục helpers để quản lý trạng thái đăng nhập.
+- Khai báo một class tự định nghĩa là User trong thư mục app/helpers để quản lý trạng thái đăng nhập.
 - Sử dụng biến siêu toàn cục $_SESSION['user'] để lưu thông tin người đăng nhập
 - Thực hiện: 
  + Khai báo một phương thức tĩnh trả về boolean nếu tồn tại $_SESSION['user']
