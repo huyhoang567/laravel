@@ -12,7 +12,7 @@ class HomeController extends Controller {
         $title = "Trang chủ";
         // Data
         $category = DB::select('select * from category');
-        $products = DB::select('select categoryName, productCompany, productName, productImage1, productImage2, productImage3, productPrice, productPriceBeforeDiscount where category.id and products.category');
+        $products = DB::select('select * from products');
 
         // Handle
 

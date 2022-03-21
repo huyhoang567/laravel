@@ -99,7 +99,7 @@
 					<div class="product-slider">
 						<div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
 
-
+@foreach ($products as $row)
 						    	
 		<div class="item item-carousel">
 			<div class="products">
@@ -107,8 +107,8 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid=">
-				<img  src="admin/productimages//" data-echo="admin/productimages//"  width="180" height="300" alt=""></a>
+				<a href="product-details.php?pid={{$row -> id}}">
+				<img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-echo="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
 			</div><!-- /.image -->			
 
 			                        		   
@@ -116,28 +116,28 @@
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid="></a></h3>
+			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.			</span>
-										     <span class="price-before-discount">Rs.	</span>
+					Rs.{{$row -> productPrice}}			</span>
+										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}	</span>
 									
 			</div><!-- /.product-price -->
 			
 		</div><!-- /.product-info -->
-
-					<div class="action"><a href="index.php?page=product&action=add&id=" class="lnk btn btn-primary">Add to Cart</a></div>
-
+@if($row -> productAvailability == 'In Stock')
+					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+@else
 						<div class="action" style="color:red">Out of Stock</div>
-					
+					@endif
 			</div><!-- /.product -->
       
 			</div><!-- /.products -->
 		</div><!-- /.item -->
-
+@endforeach
 
 			</div><!-- /.home-owl-carousel -->
 					</div><!-- /.product-slider -->
@@ -149,45 +149,46 @@
 	<div class="tab-pane" id="books">
 					<div class="product-slider">
 						<div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
-
-						    	
+	@foreach($products as $row)						
+		@if($row -> category == 3)
 		<div class="item item-carousel">
 			<div class="products">
 				
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid=">
-				<img  src="admin/productimages//" data-echo="admin/productimages//"  width="180" height="300" alt=""></a>
+				<a href="product-details.php?pid={{ $row-> id}}">
+				<img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-echo="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
 			</div><!-- /.image -->			
 
 			                        		   
 		</div><!-- /.product-image -->
-			
+	
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid="></a></h3>
+			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
 			<div class="product-price">	
 				<span class="price">
-					Rs. 			</span>
-										     <span class="price-before-discount">Rs.</span>
+					Rs.{{$row -> productPrice}} 			</span>
+										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}</span>
 									
 			</div><!-- /.product-price -->
 			
-		</div><!-- /.product-info -->
-
-					<div class="action"><a href="index.php?page=product&action=add&id=" class="lnk btn btn-primary">Add to Cart</a></div>
-
+		</div><!-- /.product-info -->		
+@if($row -> productAvailability == 'In Stock')
+					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+@else
 						<div class="action" style="color:red">Out of Stock</div>
-
+@endif
 			</div><!-- /.product -->
       
 			</div><!-- /.products -->
 		</div><!-- /.item -->
-	
+		@endif 
+	@endforeach
 	
 		
 								</div><!-- /.home-owl-carousel -->
@@ -202,8 +203,8 @@
 		<div class="tab-pane" id="furniture">
 					<div class="product-slider">
 						<div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
-
-
+@foreach ($products as $row)
+@if($row -> category == 5)
 						    	
 		<div class="item item-carousel">
 			<div class="products">
@@ -211,8 +212,8 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid=">
-				<img  src="admin/productimages//" data-echo="admin/productimages//"  width="180" height="300" alt=""></a>
+				<a href="product-details.php?pid={{$row -> id}}">
+				<img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
 			</div>		
 
 			                        		   
@@ -220,29 +221,29 @@
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid="></a></h3>
+			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.			</span>
-										     <span class="price-before-discount">Rs.</span>
+					Rs.{{$row -> productPrice}}			</span>
+										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}</span>
 									
 			</div>
 			
 		</div>
-				
-					<div class="action"><a href="index.php?page=product&action=add&id=" class="lnk btn btn-primary">Add to Cart</a></div>
-
+				@if($row -> productAvailability == 'In Stock')
+					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+				@else
 						<div class="action" style="color:red">Out of Stock</div>
-					
+					@endif
 			</div>
       
 			</div>
 		</div>
-	
-	
+		@endif
+		@endforeach
 		
 								</div>
 					</div>
@@ -259,7 +260,8 @@
 	                   	<h3 class="section-title">Smart Phones</h3>
 	                   	<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
 	   
-
+@foreach ($products as $row)
+@if($row -> category == 4 && $row -> subCategory == 4)
 
 
 
@@ -269,33 +271,34 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid="><img  src="admin/productimages//" data-echo="admin/productimages//"  width="180" height="300"></a>
+				<a href="product-details.php?pid={{$row -> id}}"><img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300"></a>
 			</div><!-- /.image -->			                        		   
 		</div><!-- /.product-image -->
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid="></a></h3>
+			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
 			<div class="product-price">	
 				<span class="price">
-					Rs. 		</span>
-										     <span class="price-before-discount">Rs.</span>
+					Rs.{{$row -> productPrice}} 		</span>
+										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}</span>
 									
 			</div>
 			
 		</div>
-				
-					<div class="action"><a href="index.php?page=product&action=add&id=" class="lnk btn btn-primary">Add to Cart</a></div>
-
+				@if($row -> productAvailability == 'In Stock')
+					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+				@else
 						<div class="action" style="color:red">Out of Stock</div>
-
+				@endif
 			</div>
 			</div>
 		</div>
-
+@endif
+@endforeach
 
 	
 			                   	</div>
@@ -306,8 +309,8 @@
 							<h3 class="section-title">Laptops</h3>
 		                   	<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
 
-
-
+@foreach ($products as $row)
+@if($row -> category == 4 && $row -> subCategory == 6)
 
 		<div class="item item-carousel">
 			<div class="products">
@@ -315,35 +318,34 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid="><img  src="admin/productimages//" data-echo="admin/productimages/"  width="300" height="300"></a>
+				<a href="product-details.php?pid={{$row -> id}}"><img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="300" height="300"></a>
 			</div><!-- /.image -->			                        		   
 		</div><!-- /.product-image -->
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid="></a></h3>
+			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
 			<div class="product-price">	
 				<span class="price">
-					Rs .			</span>
-										     <span class="price-before-discount">Rs.</span>
+					Rs.{{$row -> productPrice}}			</span>
+										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}</span>
 									
 			</div>
 			
 		</div>
-				
-					<div class="action"><a href="index.php?page=product&action=add&id=" class="lnk btn btn-primary">Add to Cart</a></div>
-
+				@if($row -> productAvailability == 'In Stock')
+					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+				@else
 						<div class="action" style="color:red">Out of Stock</div>
-
+				@endif
 			</div>
 			</div>
 		</div>
-
-
-		
+@endif
+@endforeach
 	
 				                   	</div>
 	                   </section>
@@ -358,11 +360,10 @@
 	<section class="section featured-product inner-xs wow fadeInUp">
 		<h3 class="section-title">Fashion</h3>
 		<div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
-
+@foreach ($products as $row)
+@if ($row-> category == 6)
 				<div class="item">
 					<div class="products">
-
-
 
 
 												<div class="product">
@@ -371,8 +372,8 @@
 									<div class="col col-xs-6">
 										<div class="product-image">
 											<div class="image">
-												<a href="admin/productimages/" data-lightbox="image-1" data-title="">
-													<img data-echo="admin/productimages/" width="170" height="174" alt="">
+												<a href="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-lightbox="image-1" data-title="{{$row -> productName}}">
+													<img data-echo="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" width="170" height="174" alt="">
 													<div class="zoom-overlay"></div>
 												</a>					
 											</div><!-- /.image -->
@@ -381,19 +382,19 @@
 									</div><!-- /.col -->
 									<div class="col col-xs-6">
 										<div class="product-info">
-											<h3 class="name"><a href="product-details.php?pid="></a></h3>
+											<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
 											<div class="rating rateit-small"></div>
 											<div class="product-price">	
 												<span class="price">
-													Rs. 
+													Rs.{{$row -> productPrice}}
 												</span>
 
 											</div><!-- /.product-price -->
-
-					<div class="action"><a href="index.php?page=product&action=add&id=" class="lnk btn btn-primary">Add to Cart</a></div>
-				
+				@if ($row -> productAvailability == 'In Stock')
+					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+				@else
 						<div class="action" style="color:red">Out of Stock</div>
-					
+					@endif
 										</div>
 									</div><!-- /.col -->
 								</div><!-- /.product-micro-row -->
@@ -401,8 +402,10 @@
 						</div>
 
 
-											</div>
+						</div>
 				</div>
+				@endif
+				@endforeach
 							</div>
 		</section>
     @endsection
