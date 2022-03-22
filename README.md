@@ -141,9 +141,10 @@ Trạng thái: Xong
 - Tham khảo: https://itzone.com.vn/vi/article/macroable-laravel-classes/
 
 ## Task4 - Hiển thị chi tiết sản phẩm khi người dùng nhấn vào tên sản phẩm - Thịnh
-- Thực hiện trong file product-detail.blade.php
+- Click vào tên sản phẩm ở trang home
+- Thực hiện trong file product-details.blade.php
 - Khởi tạo mới ProductDetailController cho trang này.
-- Sử dụng biến request Get productName
+- Sử dụng biến request Get productName (/product-details?productName='')
 - Sử dụng models/Products để truy vấn dữ liệu trong controller - tạo thêm phương thức riêng lấy chi tiết sản phẩm.
 
 ## Task 5 - Lưu sản phẩm vào session khi người dùng nhấn ADD TO CART - Anh làm
