@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-</head>
-<body>
+
     @extends('Templates.mytemplate')
         @section('product-details')
         <div class="breadcrumb">
+		
 	<div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
@@ -57,17 +50,17 @@
 					<div class="products">
 						<div class="hot-deal-wrapper">
 							<div class="image">
-								<img src="admin/productimages/{{$product -> id}}/{{$product -> productImage1}"  width="200" height="334" alt="">
+							<img  src="resources/views/admin/productimages/{{$product -> id}}/{{$product -> productImage1}}" data-echo="resources/views/admin/productimages/{{$product-> id}}/{{$product-> productImage1}}"   alt="">
 							</div>	
 						</div><!-- /.hot-deal-wrapper -->
 
 						<div class="product-info text-left m-t-20">
-							<h3 class="name"><a href="product-details.php?pid="></a></h3>
+							<h3 class="name"><a href="product-details.php?pid="> {{$product->productName}}</a></h3>
 							<div class="rating rateit-small"></div>
 
 							<div class="product-price">	
 								<span class="price">
-									Rs. .00
+										{{$product->productPrice}}
 								</span>
 									
 							    <span class="price-before-discount">Rs.</span>					
@@ -528,5 +521,4 @@
 			<div class="clearfix"></div>
 		<!-- </div> -->
     @endsection
-</body>
-</html>
+
