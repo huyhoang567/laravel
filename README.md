@@ -157,7 +157,7 @@ Trạng thái: Xong
  + Sử dụng trực tiếp class trên trong file views/Includes/center-menu.blade.php mà không cần qua controller
 
 
-## Task 6 - Thực hiện handle đăng nhập cho /admin
+## Task 6 - Thực hiện handle đăng nhập cho /admin - Hoàng
 - Thực hiện trong file views/admin/admin.blade.php
 - Tạo mới controller AdminLogin
 - Khai báo một Provider Admin để quản lý trạng thái Admin
