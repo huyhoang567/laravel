@@ -12,18 +12,20 @@
     <nav class="yamm megamenu-horizontal" role="navigation">
   
         <ul class="nav">
-            <li class="dropdown menu-item">
+			
+				<li class="dropdown menu-item">
 
-                <a href="sub-category.php?scid=" class="dropdown-toggle"><i class="icon fa fa-desktop fa-fw"></i>
-                </a>
-
-                        
-</li>
-</ul>
+					<a href="sub-category.php?scid=" class="dropdown-toggle"><i class="icon fa fa-desktop fa-fw"></i>
+						
+					</a>                 
+				</li>
+			
+		</ul>
     </nav>
 </div>
 </div>
-<!-- ================================== TOP NAVIGATION : END ================================== -->	            <div class="sidebar-module-container">
+<!-- ================================== TOP NAVIGATION : END ================================== -->	            
+<div class="sidebar-module-container">
 	            	<h3 class="section-title">shop by</h3>
 	            	<div class="sidebar-filter">
 		            	<!-- ============================================== SIDEBAR CATEGORY ============================================== -->

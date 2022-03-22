@@ -5,7 +5,7 @@
         <ul class="nav">
             <li class="dropdown menu-item">
                 @foreach($category as $row)
-                <a href="category.php?id={{$row->id}}" class="dropdown-toggle">
+                <a href="category?id={{$row->id}}" class="dropdown-toggle">
                     <i class="icon fa fa-desktop fa-fw"></i>
                         <!-- Sud sidebar -->
                         {{$row->categoryName}}

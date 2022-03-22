@@ -127,6 +127,7 @@ Trạng thái: Xong
 - Lấy dữ liệu từ bảng category liên kết bảng subcategory xuất dữ liệu cho sidebar menu.
 - Chú ý: import csdl vào phpMyAdmin, file myproject1.sql trong source code. Nội dung dữ liệu trong csdl sẽ chỉnh sửa sau.
 <img src='https://firebasestorage.googleapis.com/v0/b/melodic-stone-338516.appspot.com/o/laravel%2Ftask2.PNG?alt=media&token=9fe49de2-9d31-4a3f-b627-38002186f930'>
+- Trạng thái: đã xong
 
 ## Task 3 - Effect login - Thịnh
 - Khai báo một class tự định nghĩa là User trong thư mục app/helpers để quản lý trạng thái đăng nhập.
@@ -138,3 +139,33 @@ Trạng thái: Xong
  + Sử dụng trực tiếp class trên trong file views/Includes/top-menu.blade.php mà không cần qua controller để ẩn hiện nút Đăng nhập, Đăng xuất.
 - Đây là task demo - không cần phải làm được, làm được thì càng tốt.
 - Tham khảo: https://itzone.com.vn/vi/article/macroable-laravel-classes/
+
+## Task4 - Hiển thị chi tiết sản phẩm khi người dùng nhấn vào tên sản phẩm - Thịnh
+- Thực hiện trong file product-detail.blade.php
+- Khởi tạo mới ProductDetailController cho trang này.
+- Sử dụng biến request Get productName
+- Sử dụng models/Products để truy vấn dữ liệu trong controller - tạo thêm phương thức riêng lấy chi tiết sản phẩm.
+
+## Task 5 - Lưu sản phẩm vào session khi người dùng nhấn ADD TO CART - Anh làm
+
+- Khai báo một Providers CartProvider để quản lý cart
+- Sử dụng class Iluminate\Support\Facades\Session để lưu sản phẩm
+- Thực hiện: 
+ + Khai báo một phương thức tĩnh trả về boolean nếu tồn tại Session cart
+ + Khai báo phương thức setCart() để gán sản phẩm
+ + Khai báo các phương thức liên quan để thêm bớt giỏ hàng
+ + Sử dụng trực tiếp class trên trong file views/Includes/center-menu.blade.php mà không cần qua controller
+
+
+## Task 6 - Thực hiện handle đăng nhập cho /admin
+- Thực hiện trong file views/admin/admin.blade.php
+- Tạo mới controller AdminLogin
+- Khai báo một Provider Admin để quản lý trạng thái Admin
+- Sử dụng class Iluminate\Support\Facades\Session để lưu thông tin admin
+- Thực hiện: 
+ + Khai báo một phương thức tĩnh trả về boolean nếu tồn tại Session admin
+ + Khai báo phương thức setAdmin() để gán thông tin admin
+ + Khai báo các phương thức liên quan để lấy thông tin admin
+ + Khai báo phương thức removeAdmin() để xóa Session
+ + Đăng nhập thành công thì thực hiện định tuyến đến /admin/today-orders
+ + Thiết lập nút đăng xuất cho Admin, khi nhấn vào thực hiện đến định tuyến đến /admin

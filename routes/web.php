@@ -36,9 +36,7 @@ Route::get('/about', function () {
 Route::get('/forgot-password', function () {
     return view('forgot-password');
 });
-Route::get('/category', function () {
-    return view('category');
-});
+Route::get('/category', 'App\Http\Controllers\CategoryController@Category');
 Route::get('/account', function () {
     return view('my-account');
 });

@@ -90,7 +90,6 @@
 	<script src="resources/views/assets/js/scripts.js"></script>
 
 	<!-- For demo purposes – can be removed on production -->
-	
 	<script src="switchstylesheet/switchstylesheet.js"></script>
 	
 	<script>
