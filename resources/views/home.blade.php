@@ -1,6 +1,7 @@
 
 @extends('Templates.mytemplate')
 @section('home')
+
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
 <div class="container">
 	<div class="furniture-container homepage-container">
@@ -129,7 +130,7 @@
 			
 		</div><!-- /.product-info -->
 @if($row -> productAvailability == 'In Stock')
-					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+					<div class="action"><a href="addToCart/{{ $row -> id }}" class="lnk btn btn-primary">Add to Cart</a></div>
 @else
 						<div class="action" style="color:red">Out of Stock</div>
 					@endif
@@ -179,7 +180,7 @@
 			
 		</div><!-- /.product-info -->		
 @if($row -> productAvailability == 'In Stock')
-					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+					<div class="action"><a href="addToCart/{{ $row -> id }}" class="lnk btn btn-primary">Add to Cart</a></div>
 @else
 						<div class="action" style="color:red">Out of Stock</div>
 @endif
@@ -234,7 +235,7 @@
 			
 		</div>
 				@if($row -> productAvailability == 'In Stock')
-					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+					<div class="action"><a href="addToCart/{{ $row -> id }}" class="lnk btn btn-primary">Add to Cart</a></div>
 				@else
 						<div class="action" style="color:red">Out of Stock</div>
 					@endif
@@ -290,7 +291,7 @@
 			
 		</div>
 				@if($row -> productAvailability == 'In Stock')
-					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+					<div class="action"><a href="addToCart/{{ $row -> id }}" class="lnk btn btn-primary">Add to Cart</a></div>
 				@else
 						<div class="action" style="color:red">Out of Stock</div>
 				@endif
@@ -337,7 +338,7 @@
 			
 		</div>
 				@if($row -> productAvailability == 'In Stock')
-					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+					<div class="action"><a href="addToCart/{{ $row -> id }}" class="lnk btn btn-primary">Add to Cart</a></div>
 				@else
 						<div class="action" style="color:red">Out of Stock</div>
 				@endif
@@ -391,7 +392,7 @@
 
 											</div><!-- /.product-price -->
 				@if ($row -> productAvailability == 'In Stock')
-					<div class="action"><a href="index.php?page=product&action=add&id={{$row -> id}}" class="lnk btn btn-primary">Add to Cart</a></div>
+					<div class="action"><a href="addToCart/{{ $row -> id }}" class="lnk btn btn-primary">Add to Cart</a></div>
 				@else
 						<div class="action" style="color:red">Out of Stock</div>
 					@endif

@@ -1,3 +1,4 @@
+
 <div class="main-header">
     <div class="container">
         <div class="row">
@@ -25,108 +26,132 @@
 </div><!-- /.search-area -->
 <!-- ============================================================= SEARCH AREA : END ============================================================= -->				</div><!-- /.top-search-holder -->
 
-            <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
+<div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
                 <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
 
-<div class="dropdown dropdown-cart">
-    <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
-        <div class="items-cart-inner">
-            <div class="total-price-basket">
-                <span class="total-price">
-                    <span class="value"></span>
-                    <span class="sign">VND</span>
-                </span>
+
+
+
+
+{{-- Show cart in session --}}
+
+@if (Session::has('cart'))
+    <div class="dropdown dropdown-cart">
+        <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+            <div class="items-cart-inner">
+                <div class="total-price-basket">
+                    <span class="total-price">
+                        {{-- Total money --}}
+                        <span class="value">
+                            {{
+                                array_reduce(Session::get('cart'), function ($a, $b) {
+                                    return $a + $b->productPrice;
+                                })
+                            }}
+                        </span>
+                        <span class="sign">VND</span>
+                    </span>
+                </div>
+                <div class="basket">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                </div>
+                <div class="basket-item-count"><span class="count">
+                    {{ count(Session::get('cart')) }}    
+                </span></div>
+            
             </div>
-            <div class="basket">
-                <i class="glyphicon glyphicon-shopping-cart"></i>
-            </div>
-            <div class="basket-item-count"><span class="count"></span></div>
-        
-        </div>
-    </a>
-    <ul class="dropdown-menu">
-        <li>
-            <div class="cart-item product-summary">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div class="image">
-                            <a href="product-details.php?pid="><img  src="admin/productimages//" width="35" height="50" alt=""></a>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <div class="cart-item product-summary">
+                    @foreach (Session::get('cart') as $each)
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="image">
+                                <a href="product-details.php?pid="><img  src="{{ $each->productImage1 }}" width="35" height="50" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            
+                            <h3 class="name"><a href="product-details.php?pid="></a></h3>
+                            <div class="price">{{ $each->productPrice }}</div>
                         </div>
                     </div>
-                    <div class="col-xs-7">
+                    @endforeach
+                </div><!-- /.cart-item -->
+                <div class="clearfix"></div>
+                <hr>
+                <div class="clearfix cart-total">
+                    <div class="pull-right">
                         
-                        <h3 class="name"><a href="product-details.php?pid="></a></h3>
-                        <div class="price">Rs.*</div>
-                    </div>
-                    
-                </div>
-            </div><!-- /.cart-item -->
-            <div class="clearfix"></div>
-        <hr>
-    
-        <div class="clearfix cart-total">
-            <div class="pull-right">
-                
-                    <span class="text">Total :</span><span class='price'>Rs.</span>
-                    
-            </div>
-        
-            <div class="clearfix"></div>
-                
-            <a href="my-cart.php" class="btn btn-upper btn-primary btn-block m-t-20">My Cart</a>	
-        </div><!-- /.cart-total-->
-                
-            
-    </li>
-    </ul><!-- /.dropdown-menu-->
-</div><!-- /.dropdown-cart -->
+                            <span class="text">Total :  {{
+                                array_reduce(Session::get('cart'), function ($a, $b) {
+                                    return $a + $b->productPrice;
+                                })
+                            }}
+                            </span>
 
-<div class="dropdown dropdown-cart">
-    <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
-        <div class="items-cart-inner">
-            <div class="total-price-basket">
-                <span class="total-price">
-                    <span class="value">00.00</span>
-                    <span class="sign">VND</span>
-                </span>
-            </div>
-            <div class="basket">
-                <i class="glyphicon glyphicon-shopping-cart"></i>
-            </div>
-            <div class="basket-item-count"><span class="count">0</span></div>
-        
-        </div>
-    </a>
-    <ul class="dropdown-menu">
-    
-
-    
-    
-        <li>
-            <div class="cart-item product-summary">
-                <div class="row">
-                    <div class="col-xs-12">
-                        Your Shopping Cart is Empty.
+                            <span class='price'>Rs.</span>
+                            
                     </div>
+                
+                    <div class="clearfix"></div>
+                        
+                    <a href="my-cart.php" class="btn btn-upper btn-primary btn-block m-t-20">My Cart</a>	
+                </div><!-- /.cart-total-->
                     
-                    
+                
+            </li>
+        </ul><!-- /.dropdown-menu-->
+    </div><!-- /.dropdown-cart -->
+@else
+    <div class="dropdown dropdown-cart">
+        <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+            <div class="items-cart-inner">
+                <div class="total-price-basket">
+                    <span class="total-price">
+                        <span class="value">00.00</span>
+                        <span class="sign">VND</span>
+                    </span>
                 </div>
-            </div><!-- /.cart-item -->
+                <div class="basket">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                </div>
+                <div class="basket-item-count"><span class="count">0</span></div>
+            
+            </div>
+        </a>
+        <ul class="dropdown-menu">
         
+
+        
+        
+            <li>
+                <div class="cart-item product-summary">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            Your Shopping Cart is Empty.
+                        </div>
+                        
+                        
+                    </div>
+                </div><!-- /.cart-item -->
             
-        <hr>
-    
-        <div class="clearfix cart-total">
-            
-            <div class="clearfix"></div>
                 
-            <a href="index.php" class="btn btn-upper btn-primary btn-block m-t-20">Continue Shooping</a>	
-        </div><!-- /.cart-total-->
+            <hr>
+        
+            <div class="clearfix cart-total">
                 
-            
-    </li>
-    </ul><!-- /.dropdown-menu-->
-</div>
+                <div class="clearfix"></div>
+                    
+                <a href="index.php" class="btn btn-upper btn-primary btn-block m-t-20">Continue Shooping</a>	
+            </div><!-- /.cart-total-->
+                    
+                
+        </li>
+        </ul><!-- /.dropdown-menu-->
+    </div>
+@endif
 
 
 

@@ -140,7 +140,7 @@ Trạng thái: Xong
 - Đây là task demo - không cần phải làm được, làm được thì càng tốt.
 - Tham khảo: https://itzone.com.vn/vi/article/macroable-laravel-classes/
 
-## Task4 - Hiển thị chi tiết sản phẩm khi người dùng nhấn vào tên sản phẩm - Thịnh
+## Task 4 - Hiển thị chi tiết sản phẩm khi người dùng nhấn vào tên sản phẩm - Thịnh
 - Click vào tên sản phẩm ở trang home
 - Thực hiện trong file product-details.blade.php
 - Khởi tạo mới ProductDetailController cho trang này.

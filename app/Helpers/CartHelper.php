@@ -1,14 +1,10 @@
 <?php
-// use Illuminate\Support\Facades\DB;
-namespace App\Http\Controllers;
 
-<<<<<<< HEAD
+namespace App\Services\CartHelper;
+
 class CartHelper {
-=======
-class CartHelper extends Controller {
->>>>>>> 5317fb3e3083afae3c138aba0e510f8aa4dc97c1
 
-    public static function exists() {
+    public function exists() {
         if(empty($_SESSION['cart']))
             return false;
         return true;
