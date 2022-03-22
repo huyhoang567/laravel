@@ -30,7 +30,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 					<i class="icon-reorder shaded"></i>
 				</a>
 
-			  	<a class="brand" href="admin">
+			  	<a class="brand" href="today-orders">
 			  		Shopping Portal | Admin
 			  	</a>
 
@@ -47,7 +47,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 							<ul class="dropdown-menu">
 								<li><a href="admin/change-password">Change Password</a></li>
 								<li class="divider"></li>
-								<li><a href="admin/logout">Logout</a></li>
+								<li><a href="logout">Logout</a></li>
 							</ul>
 						</li>
 					</ul>
