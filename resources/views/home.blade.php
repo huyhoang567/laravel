@@ -107,7 +107,7 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid={{$row -> id}}">
+				<a href="product-details/{{$row -> id}}">
 				<img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-echo="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
 			</div><!-- /.image -->			
 
@@ -116,7 +116,7 @@
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -157,7 +157,7 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid={{ $row-> id}}">
+				<a href="product-details/{{$row -> id}}">
 				<img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-echo="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
 			</div><!-- /.image -->			
 
@@ -166,7 +166,7 @@
 	
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -271,13 +271,13 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid={{$row -> id}}"><img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300"></a>
+				<a href="product-details/{{$row -> id}}"><img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300"></a>
 			</div><!-- /.image -->			                        		   
 		</div><!-- /.product-image -->
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -318,13 +318,13 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid={{$row -> id}}"><img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="300" height="300"></a>
+				<a href="product-details/{{$row -> id}}"><img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="300" height="300"></a>
 			</div><!-- /.image -->			                        		   
 		</div><!-- /.product-image -->
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -382,7 +382,7 @@
 									</div><!-- /.col -->
 									<div class="col col-xs-6">
 										<div class="product-info">
-											<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
+											<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
 											<div class="rating rateit-small"></div>
 											<div class="product-price">	
 												<span class="price">

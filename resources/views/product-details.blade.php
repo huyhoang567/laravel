@@ -12,10 +12,8 @@
         <div class="breadcrumb">
 	<div class="container">
 		<div class="breadcrumb-inner">
-
-
-
 			<ul class="list-inline list-unstyled">
+
 				<li><a href="index.php">Home</a></li>
 				<li></a></li>
 				<li></li>
@@ -37,7 +35,7 @@
 	<h3 class="section-title">Category</h3>
 	<div class="sidebar-widget-body m-t-10">
 		<div class="accordion">
-
+	
 
 	    	<div class="accordion-group">
 	            <div class="accordion-heading">
@@ -55,17 +53,12 @@
 <div class="sidebar-widget hot-deals wow fadeInUp">
 	<h3 class="section-title">hot deals</h3>
 	<div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-xs">
-		
-
-
-								        
-													<div class="item">
+				<div class="item">
 					<div class="products">
 						<div class="hot-deal-wrapper">
 							<div class="image">
-								<img src="admin/productimages/"  width="200" height="334" alt="">
-							</div>
-							
+								<img src="admin/productimages/{{$product -> id}}/{{$product -> productImage1}"  width="200" height="334" alt="">
+							</div>	
 						</div><!-- /.hot-deal-wrapper -->
 
 						<div class="product-info text-left m-t-20">

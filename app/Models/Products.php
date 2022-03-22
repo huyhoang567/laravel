@@ -24,4 +24,9 @@ class Products extends Model
         $value = DB::table('products')->where('subcategory', '=', $subId)->get();
         return $value;
     }
+    //
+    public static function getByProductId ($id){
+        $value = DB::table('products')->find($id);
+        return $value;
+    }
 }

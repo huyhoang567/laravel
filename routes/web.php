@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\ProductController;
+use App\Helpers\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +37,9 @@ Route::get('/about', function () {
 Route::get('/forgot-password', function () {
     return view('forgot-password');
 });
-Route::get('/category', 'App\Http\Controllers\CategoryController@Category');
+Route::get('/category', function () {
+    return view('category');
+});
 Route::get('/account', function () {
     return view('my-account');
 });
@@ -58,9 +61,7 @@ Route::get('/payment-method', function () {
 Route::get('/pending-orders', function () {
     return view('pending-orders');
 });
-Route::get('/product-details', function () {
-    return view('product-details');
-});
+Route::get('/product-details/{id}',[ProductController::class,'detail']);
 Route::get('/search-result', function () {
     return view('search-result');
 });
