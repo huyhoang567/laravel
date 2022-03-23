@@ -170,3 +170,14 @@ Trạng thái: Xong
  + Khai báo phương thức removeAdmin() để xóa Session
  + Đăng nhập thành công thì thực hiện định tuyến đến /admin/today-orders
  + Thiết lập nút đăng xuất cho Admin, khi nhấn vào thực hiện đến định tuyến đến /admin
+
+## Task 7 - Insert product
+
+- Đăng nhập admin /admin
+- Endpoint /admin/insert-products
+- Thực hiện trong file views/admin/insert-products.blade.php
+- Tạo mới controller InsertDataAdminController
+- Tạo mới function static insert trong models/Products
+- Thực hiện insert cho bảng products
+- Chú ý: Khi người dùng chọn vào Category thì các Sub Category cũng được hiển thị để chọn.
+- Vui lòng viết code command line tử tế - thể hiện sự chuyên nghiệp

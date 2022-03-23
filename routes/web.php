@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderAdminController;
 use App\Helpers\User;
+use App\Http\Controllers\UsersAdminController;
 use Illuminate\Http\Request;
 
 /*
@@ -98,7 +99,24 @@ Route::get('admin/category', function () {
 Route::get('admin/change-password', function () {
     return view('admin/change-password');
 }) -> middleware('checkAdmin');
-Route::get('admin/delivered-orders', [OrderController::class, "deliveredOrder"]) -> middleware('checkAdmin');
+
+
+// ========= ORDERS Admin
+Route::get('admin/delivered-orders', [OrderAdminController::class, "deliveredOrder"]) -> middleware('checkAdmin');
+
+Route::get('admin/pending-orders', [OrderAdminController::class, "pendingOrder"]) -> middleware('checkAdmin');
+
+Route::get('admin/today-orders', [OrderAdminController::class, "orders"]) -> middleware('checkAdmin');
+
+Route::get('admin/update-order', [OrderAdminController::class, "updateOrder"]) -> middleware('checkAdmin');
+
+Route::post('admin/update', [OrderAdminController::class, "postUpdate"]);
+
+// ======== End
+// ======== USERS admin
+Route::get('admin/manage-users', [UsersAdminController::class, 'manage_users']) -> middleware('checkAdmin');
+
+// ======== End
 Route::get('admin/edit-category', function () {
     return view('admin/edit-category');
 }) -> middleware('checkAdmin');
@@ -114,15 +132,11 @@ Route::get('admin/insert-products', function () {
 Route::get('admin/manage-products', function () {
     return view('admin/manage-products');
 }) -> middleware('checkAdmin');
-Route::get('admin/manage-users', function () {
-    return view('admin/manage-users');
-}) -> middleware('checkAdmin');
-Route::get('admin/pending-orders', [OrderController::class, "pendingOrder"]) -> middleware('checkAdmin');
+
 Route::get('admin/subcategory', function () {
     return view('admin/subcategory');
 }) -> middleware('checkAdmin');
 
-Route::get('admin/today-orders', [OrderController::class, "orders"]) -> middleware('checkAdmin');
 
 Route::get('admin/update-image1', function () {
     return view('admin/update-image1');
@@ -133,8 +147,7 @@ Route::get('admin/update-image2', function () {
 Route::get('admin/update-image3', function () {
     return view('admin/update-image3');
 }) -> middleware('checkAdmin');
-Route::get('admin/update-order', [OrderController::class, "updateOrder"]) -> middleware('checkAdmin');
-Route::post('admin/update', [OrderController::class, "postUpdate"]);
+
 Route::get('admin/user-logs', function () {
     return view('admin/user-logs');
 }) -> middleware('checkAdmin');

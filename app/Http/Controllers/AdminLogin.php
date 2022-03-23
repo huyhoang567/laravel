@@ -19,7 +19,6 @@ class AdminLogin extends Controller
         $username = $request -> get('username');    
         $password = md5($request -> get('password'));
         $admin = Admin::login($username, $password);
-        
         // print_r($admin);
         
         if (count($admin) != 0) {

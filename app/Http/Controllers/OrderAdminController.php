@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Orders;
 use App\Models\Ordertrackhistory;
 
-class OrderController extends Controller
+class OrderAdminController extends Controller
 {
     //
     public static function orders (){

@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-</head>
-<body>
+
     @extends('admin.template.admintemplate')
         @section('manage-users')
         <div class="content">
@@ -26,13 +18,14 @@
 									<br />
 
 							
-								<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
+								<table cellpadding="0" cellspacing="0" border="0" id="table"
+									class="datatable-1 table table-bordered table-striped display" width="100%">
 									<thead>
 										<tr>
 											<th>#</th>
-											<th> Name</th>
-											<th>Email </th>
-											<th>Contact no</th>
+											<th>Tên khách hàng</th>
+											<th>Email liên hệ</th>
+											<th>SĐT</th>
 											<th>Shippping Address/City/State/Pincode </th>
 											<th>Billing Address/City/State/Pincode </th>
 											<th>Reg. Date </th>
@@ -40,18 +33,18 @@
 										</tr>
 									</thead>
 									<tbody>
-
-
+										<?php $i = 1; ?>
+										@foreach ($users as $user)
 										<tr>
+											<td>{{ $i++ }}</td>
+											<td>{{ $user->name }}</td>
+											<td>{{ $user->email }}</td>
+											<td>{{ $user->contactno }}</td>
+											<td>{{ $user->shippingAddress }}</td>
 											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											
-										
+											<td>{{ $user->regDate }}</td>
+										</tr>
+										@endforeach
 										
 								</table>
 							</div>
@@ -65,5 +58,4 @@
 		</div><!--/.container-->
 	</div><!--/.wrapper-->
     @endsection
-</body>
-</html>
+
