@@ -125,7 +125,7 @@ Route::get('admin/subcategory', function () {
     return view('admin/subcategory');
 }) -> middleware('checkAdmin');
 Route::get('admin/today-orders', function (Request $rs) {
-    dd($rs->session()->all());
+    
     return view('admin/today-orders');
 }) -> middleware('checkAdmin');
 Route::get('admin/update-image1', function () {
