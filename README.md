@@ -176,7 +176,7 @@ Trạng thái: Xong
 - Đăng nhập admin /admin
 - Endpoint /admin/insert-products
 - Thực hiện trong file views/admin/insert-products.blade.php
-- Tạo mới controller InsertDataAdminController
+- Tạo mới controller InsertDataAdminController - Khai báo phương thức InsertProduct trong controller
 - Tạo mới function static insert trong models/Products
 - Thực hiện insert cho bảng products
 - Chú ý: Khi người dùng chọn vào Category thì các Sub Category cũng được hiển thị để chọn.
