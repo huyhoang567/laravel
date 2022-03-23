@@ -69,30 +69,30 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 								<a class="collapsed" data-toggle="collapse" href="#togglePages">
 									<i class="menu-icon icon-cog"></i>
 									<i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
-									Order Management
+									Quản lý đơn hàng
 								</a>
 								<ul id="togglePages" class="collapse unstyled">
 									<li>
-										<a href="/admin/today-orders">
+										<a href="today-orders">
 											<i class="icon-tasks"></i>
-											Today's Orders
+											Đơn hàng hôm nay
  
 											<b class="label orange pull-right"></b>
 											
 										</a>
 									</li>
 									<li>
-										<a href="/admin/pending-orders">
+										<a href="pending-orders">
 											<i class="icon-tasks"></i>
-											Pending Orders
+											Đơn hàng chờ xác nhận
 <b class="label orange pull-right"></b>
 
 										</a>
 									</li>
 									<li>
-										<a href="/admin/delivered-orders">
+										<a href="delivered-orders">
 											<i class="icon-inbox"></i>
-											Delivered Orders
+											Đơn hàng đã giao
 <b class="label green pull-right"></b>
 
 
@@ -102,7 +102,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 							</li>
 							
 							<li>
-								<a href="/admin/manage-users">
+								<a href="manage-users">
 									<i class="menu-icon icon-group"></i>
 									Manage users
 								</a>
@@ -111,18 +111,18 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 
 
 						<ul class="widget widget-menu unstyled">
-                                <li><a href="/admin/category"><i class="menu-icon icon-tasks"></i> Create Category </a></li>
-                                <li><a href="/admin/subcategory"><i class="menu-icon icon-tasks"></i>Sub Category </a></li>
-                                <li><a href="/admin/insert-products"><i class="menu-icon icon-paste"></i>Insert Product </a></li>
-                                <li><a href="/admin/manage-products"><i class="menu-icon icon-table"></i>Manage Products </a></li>
+                                <li><a href="category"><i class="menu-icon icon-tasks"></i> Create Category </a></li>
+                                <li><a href="subcategory"><i class="menu-icon icon-tasks"></i>Sub Category </a></li>
+                                <li><a href="insert-products"><i class="menu-icon icon-paste"></i>Insert Product </a></li>
+                                <li><a href="manage-products"><i class="menu-icon icon-table"></i>Manage Products </a></li>
                         
                             </ul><!--/.widget-nav-->
 
 						<ul class="widget widget-menu unstyled">
-							<li><a href="/admin/user-logs"><i class="menu-icon icon-tasks"></i>User Login Log </a></li>
+							<li><a href="user-logs"><i class="menu-icon icon-tasks"></i>User Login Log </a></li>
 							
 							<li>
-								<a href="/admin/logout">
+								<a href="logout">
 									<i class="menu-icon icon-signout"></i>
 									Logout
 								</a>
@@ -181,6 +181,9 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                 </div>
                 <div>
                     @yield('user-logs')
+                </div>
+                <div>
+                    @yield('update-orders')
                 </div>
 
 

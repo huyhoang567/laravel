@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>{{$title}}</title>
 </head>
 <body>
     @extends('admin.template.admintemplate')
@@ -13,54 +13,54 @@
 
 	<div class="module">
 							<div class="module-head">
-								<h3>Pending Orders</h3>
+								<h3>Đơn hàng hôm nay({{count($orders)}})</h3>
 							</div>
 							<div class="module-body table">
-
+@if(isset($_GET['del']))
 									<div class="alert alert-error">
 										<button type="button" class="close" data-dismiss="alert">×</button>
 									<strong>Oh snap!</strong> 	
 									</div>
-
+@endif
 
 									<br />
 
 							
-			<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display table-responsive" >
+								<table id="table" cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display table-responsive" >
 									<thead>
 										<tr>
 											<th>#</th>
-											<th> Name</th>
-											<th width="50">Email /Contact no</th>
-											<th>Shipping Address</th>
-											<th>Product </th>
-											<th>Qty </th>
-											<th>Amount </th>
-											<th>Order Date</th>
-											<th>Action</th>
+											<th>Tên khách hàng</th>
+											<th width="50">Email / Số điện thoại</th>
+											<th>Địa chỉ nhận hàng</th>
+											<th>Sản phẩm</th>
+											<th>Số lượng</th>
+											<th>Tổng cộng</th>
+											<th>Ngày đặt hàng</th>
+											<th>Hành động</th>
 											
 										
 										</tr>
 									</thead>
 								
-<tbody>
-									
+									<tbody>
+	<?php $tt = 1;?>								
+	@foreach($orders as $row)
 										<tr>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td><?php echo $tt++;?></td>
+											<td>{{$row -> username}}</td>
+											<td>{{$row -> useremail}}/{{$row -> usercontact}}</td>
 										
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td>    <a href="updateorder.php?oid=" title="Update order" target="_blank"><i class="icon-edit"></i></a>
+											<td>{{$row -> shippingaddress}}, {{$row -> shippingcity}}, {{$row -> shippingstate}}, {{$row -> shippingpincode}}</td>
+											<td>{{$row -> productname}}</td>
+											<td>{{$row -> quantity}}</td>
+											<td>{{($row -> quantity) * ($row -> productprice) + ($row -> shippingcharge)}}</td>
+											<td>{{$row -> orderdate}}</td>
+											<td>    <a href="update-order?id={{$row -> id}}" title="Update order" target="_blank"><i class="icon-edit"></i></a>
 											</td>
-											</tr>
-
-										
-										</tbody>
+										</tr>										
+	@endforeach						
+									</tbody>
 								</table>
 							</div>
 						</div>						

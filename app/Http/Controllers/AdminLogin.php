@@ -15,17 +15,20 @@ class AdminLogin extends Controller
         return view('admin/admin');
     }
     public static function postLogin(Request $request)
-        {
+    {
         $username = $request -> get('username');    
-        $password = $request -> get('password');
+        $password = md5($request -> get('password'));
         $admin = Admin::login($username, $password);
         
-        print_r($admin);
+        // print_r($admin);
         
-        if ($admin) {
+        if (count($admin) != 0) {
             session() -> put('admin', $username);
             // dd('Đăng nhập thành công');
             return redirect('admin/today-orders');
+        }else{
+            echo '<script> alert ("sai tài khoản hoặc mật khẩu")</script>';
+            echo '<meta http-equiv="refresh" content="0; url=admin"/>';
         }
     }
     public static function checkSession(Request $request){
