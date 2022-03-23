@@ -117,7 +117,7 @@
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details?productName={{$row -> productName}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -167,7 +167,7 @@
 	
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details?productName={{$row -> productName}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -222,7 +222,7 @@
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details.php?pid={{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details.php?productName={{$row -> productName}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -278,7 +278,7 @@
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details?productName={{$row -> productName}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -325,7 +325,7 @@
 			
 		
 		<div class="product-info text-left">
-			<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
+			<h3 class="name"><a href="product-details?productName={{$row -> productName}}">{{$row -> productName}}</a></h3>
 			<div class="rating rateit-small"></div>
 			<div class="description"></div>
 
@@ -383,7 +383,7 @@
 									</div><!-- /.col -->
 									<div class="col col-xs-6">
 										<div class="product-info">
-											<h3 class="name"><a href="product-details/{{$row -> id}}">{{$row -> productName}}</a></h3>
+											<h3 class="name"><a href="product-details?productName={{$row -> productName}}">{{$row -> productName}}</a></h3>
 											<div class="rating rateit-small"></div>
 											<div class="product-price">	
 												<span class="price">

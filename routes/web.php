@@ -61,7 +61,7 @@ Route::get('/payment-method', function () {
 Route::get('/pending-orders', function () {
     return view('pending-orders');
 });
-Route::get('/product-details/{id}', [ ProductController::class, 'detail']);
+Route::get('/product-details', [ ProductController::class, 'detail_products']);
 Route::get('/search-result', function () {
     return view('search-result');
 });

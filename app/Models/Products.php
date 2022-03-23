@@ -29,4 +29,13 @@ class Products extends Model
         $value = DB::table('products')->find($id);
         return $value;
     }
+    // Lấy sản phẩm theo tên
+    public static function getByProductName ($producName){
+
+        $value = DB::table('products')->where('productName', $producName)->get();
+        if(isset($value[0]))
+            return $value[0];
+        return false;
+    }
+
 }
