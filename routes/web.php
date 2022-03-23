@@ -124,7 +124,7 @@ Route::get('admin/pending-orders', function () {
 Route::get('admin/subcategory', function () {
     return view('admin/subcategory');
 }) -> middleware('checkAdmin');
-Route::get('admin/today-orders', function (Request $rs) {
+Route::get('admin/today-orders', function () {
     
     return view('admin/today-orders');
 }) -> middleware('checkAdmin');
