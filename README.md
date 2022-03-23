@@ -182,6 +182,6 @@ Trạng thái: Xong
 - Lưu ảnh vào folder resources/images với tên imageName.png hoặc imageName.jpg
 - Chú ý: Khi người dùng chọn vào Category thì các Sub Category cũng được hiển thị để chọn.
 - Vui lòng viết code command line tử tế - thể hiện sự chuyên nghiệp
-- Admin: admin - password: e10adc3949ba59abbe56e057f20f883e ( chèn các giá trị ben vào bảng admin để đăng nhập)
+- Admin: admin - password: e10adc3949ba59abbe56e057f20f883e ( chèn các giá trị bên vào bảng admin để đăng nhập)
 
 ******  Vui lòng làm theo các chỉ dẫn, đừng có làm một nẻo như cái Task 4
