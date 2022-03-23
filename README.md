@@ -179,6 +179,7 @@ Trạng thái: Xong
 - Tạo mới controller InsertDataAdminController - Khai báo phương thức InsertProduct trong controller
 - Tạo mới function static insert trong models/Products
 - Thực hiện insert cho bảng products
+- Lưu ảnh vào folder resources/images với tên imageName.png hoặc imageName.jpg
 - Chú ý: Khi người dùng chọn vào Category thì các Sub Category cũng được hiển thị để chọn.
 - Vui lòng viết code command line tử tế - thể hiện sự chuyên nghiệp
 - Admin: admin - password: e10adc3949ba59abbe56e057f20f883e ( chèn các giá trị ben vào bảng admin để đăng nhập)
