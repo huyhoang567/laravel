@@ -171,7 +171,7 @@ Trạng thái: Xong
  + Đăng nhập thành công thì thực hiện định tuyến đến /admin/today-orders
  + Thiết lập nút đăng xuất cho Admin, khi nhấn vào thực hiện đến định tuyến đến /admin
 
-## Task 7 - Insert product
+## Task 7 - Insert  - Thịnh
 
 - Đăng nhập admin /admin
 - Endpoint /admin/insert-products
