@@ -121,7 +121,9 @@ Route::get('admin/pending-orders', [OrderController::class, "pendingOrder"]) -> 
 Route::get('admin/subcategory', function () {
     return view('admin/subcategory');
 }) -> middleware('checkAdmin');
+
 Route::get('admin/today-orders', [OrderController::class, "orders"]) -> middleware('checkAdmin');
+
 Route::get('admin/update-image1', function () {
     return view('admin/update-image1');
 }) -> middleware('checkAdmin');
