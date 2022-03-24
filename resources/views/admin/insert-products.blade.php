@@ -5,12 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
+	
 </head>
 <body>
+	
+		<!-- Script -->
+		<script type="text/javascript">
+
+			function getSub () {
+				let category = document.getElementById('category');
+				if(category.value != "") {
+					let subCategory =  @json($subcategories);
+					let subsDisplay = subCategory.filter(elem=>{
+						return elem.categoryid == category.value
+					})
+					var option ='';
+					subsDisplay.forEach(elem=>{
+             	     option += `<option value='${elem.id}'> ${elem.subcategory} "</option>`;
+					})
+					
+					document.getElementById('subcategory').innerHTML = option
+				}
+			}
+		</script>
+
+	<!-- Endscript -->
+
     @extends('admin.template.admintemplate')
         @section('insert-products')
         <div class="content">
-
 						<div class="module">
 							<div class="module-head">
 								<h3>Insert Product</h3>
@@ -39,12 +62,11 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Category</label>
 <div class="controls">
-<select name="category" class="span8 tip" onChange="getSubcat(this.value);"  required>
+<select  id="category" onchange="getSub()" name="category" class="span8 tip"   required>
 <option value="">Select Category</option> 
-
-
-<option value=""></option>
-
+@foreach ($categorys as $row)
+<option value="{{$row->id}}">{{$row->categoryName}}</option>
+@endforeach
 </select>
 </div>
 </div>
@@ -156,6 +178,11 @@
 			</div>
 		</div><!--/.container-->
 	</div><!--/.wrapper-->
+
+
+
+
+	<!-- End Section -->
     @endsection
 </body>
 </html>

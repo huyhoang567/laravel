@@ -1,10 +1,11 @@
 <?php
-
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderAdminController;
 use App\Helpers\User;
+use App\Http\Controllers\InsertDataAdminController;
 use App\Http\Controllers\UsersAdminController;
 use Illuminate\Http\Request;
 
@@ -126,9 +127,7 @@ Route::get('admin/edit-products', function () {
 Route::get('admin/edit-subcategory', function () {
     return view('admin/edit-subcategory');
 }) -> middleware('checkAdmin');
-Route::get('admin/insert-products', function () {
-    return view('admin/insert-products');
-}) -> middleware('checkAdmin');
+Route::get('admin/insert-products', [InsertDataAdminController::class, 'InsertProductAdmin']) -> middleware('checkAdmin');
 Route::get('admin/manage-products', function () {
     return view('admin/manage-products');
 }) -> middleware('checkAdmin');

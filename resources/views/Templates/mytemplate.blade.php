@@ -11,6 +11,7 @@
 	    <meta name="robots" content="all">
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="resources/views/assets/css/bootstrap.min.css">
+		
 	    <!-- Customizable CSS -->
 	    <link rel="stylesheet" href="resources/views/assets/css/main.css">
 	    <link rel="stylesheet" href="resources/views/assets/css/green.css">
