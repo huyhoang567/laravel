@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Products;
-use App\Providers\A;
-use App\Services\CartHelper\CartHelper;
+use App\Services\CartHelper as ServicesCartHelper;
 use Illuminate\Contracts\Mail\Mailable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Validator;
 
@@ -33,25 +31,19 @@ class HomeController extends Controller {
             'category' => $category,
             'products' => $products,
 
-            'cart' => new CartHelper()
+            
         ]);
     }
 
-    public function addToCart($productId) {
+    public function addToCart($productId, ServicesCartHelper $cartService) {
 
         //...
         $product = Products::getByProductId($productId);
         
-        if(Session::has('cart')) {
-            $cart = Session::get('cart');
-            Session::put('cart', [
-                $product, ...$cart
-            ]);
-        } else {
-            Session::put('cart', [$product]);
+        if(!$cartService->existsProduct($product)) {
+            $cartService->pushCart($product);
         }
 
-        // dd(Session::all());
 
         return redirect('/home');
     }
