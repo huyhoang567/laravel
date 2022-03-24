@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Session;
 
-class CartHelper{
+class CartHelper {
 
     public function existsProduct( $product): bool {
         $cart = $this->getCart();
