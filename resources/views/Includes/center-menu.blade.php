@@ -35,7 +35,7 @@
 
 {{-- Show cart in session --}}
 
-@if (Session::has('cart'))
+@if ($cart->existsCart())
     <div class="dropdown dropdown-cart">
         <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
             <div class="items-cart-inner">
@@ -44,7 +44,7 @@
                         {{-- Total money --}}
                         <span class="value">
                             {{
-                                array_reduce(Session::get('cart'), function ($a, $b) {
+                                array_reduce($cart->getCart(), function ($a, $b) {
                                     return $a + $b->productPrice;
                                 })
                             }}
@@ -56,7 +56,7 @@
                     <i class="glyphicon glyphicon-shopping-cart"></i>
                 </div>
                 <div class="basket-item-count"><span class="count">
-                    {{ count(Session::get('cart')) }}    
+                    {{ count($cart->getCart()) }}    
                 </span></div>
             
             </div>
@@ -64,7 +64,7 @@
         <ul class="dropdown-menu">
             <li>
                 <div class="cart-item product-summary">
-                    @foreach (Session::get('cart') as $each)
+                    @foreach ($cart->getCart() as $each)
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="image">
@@ -85,7 +85,7 @@
                     <div class="pull-right">
                         
                             <span class="text">Total :  {{
-                                array_reduce(Session::get('cart'), function ($a, $b) {
+                                array_reduce($cart->getCart(), function ($a, $b) {
                                     return $a + $b->productPrice;
                                 })
                             }}

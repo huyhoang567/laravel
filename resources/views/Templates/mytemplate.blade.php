@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+
+
+{{-- Inject services --}}
+@inject('cart', 'App\Services\CartHelper')
+
+
+
+{{-- end inject services ---}}
 <html lang="en">
 	<head>
 		<!-- Meta -->
@@ -41,7 +49,7 @@
 			@include('Includes.top-menu')
 			<!-- ============================================== TOP-MENU : END ============================================== -->
 			<!-- ============================================== CENTER-MENU ============================================== -->
-			@include("Includes.center-menu")
+			@include("Includes.center-menu", ['cart' => $cart])
 			<!-- ============================================== CENTER-MENU : END ============================================== -->
 			<!-- ============================================== BOTTOM-MENU ============================================== -->
 			@include('Includes.bottom-menu')
