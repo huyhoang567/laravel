@@ -40,9 +40,9 @@ class InsertDataAdminController extends Controller
 
          ];
          // Tien hanh luu anh public image tam 
-         $request->file('productimage1')->move(public_path('images'),$request->file('productimage1')->getClientOriginalName());
-         $request->file('productimage2')->move(public_path('images'),$request->file('productimage2')->getClientOriginalName());
-         $request->file('productimage3')->move(public_path('images'),$request->file('productimage3')->getClientOriginalName());
+         $request->file('productimage1')->move(storage_path('resources/views/admin/images'),$request->file('productimage1')->getClientOriginalName());
+         $request->file('productimage2')->move(storage_path('resources/views/admin/images'),$request->file('productimage2')->getClientOriginalName());
+         $request->file('productimage3')->move(storage_path('resources/views/admin/images'),$request->file('productimage3')->getClientOriginalName());
        
         //Goi ham insert product
         Products::insertProduct($product);

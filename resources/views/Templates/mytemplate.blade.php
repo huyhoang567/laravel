@@ -3,7 +3,7 @@
 
 {{-- Inject services --}}
 @inject('cart', 'App\Services\CartHelper')
-
+@inject('user', 'App\Services\User')
 
 
 {{-- end inject services ---}}
@@ -46,7 +46,7 @@
     <body class="cnt-home">
 		<header class="header-style-1">
 			<!-- ============================================== TOP MENU ============================================== -->
-			@include('Includes.top-menu')
+			@include('Includes.top-menu',['user'=>$user])
 			<!-- ============================================== TOP-MENU : END ============================================== -->
 			<!-- ============================================== CENTER-MENU ============================================== -->
 			@include("Includes.center-menu", ['cart' => $cart])
