@@ -21,7 +21,7 @@
 					})
 					var option ='';
 					subsDisplay.forEach(elem=>{
-             	     option += `<option value='${elem.id}'> ${elem.subcategory} "</option>`;
+             	     option += `<option value='${elem.id}'> ${elem.subcategory} </option>`;
 					})
 					
 					document.getElementById('subcategory').innerHTML = option
@@ -57,8 +57,8 @@
 
 									<br />
 
-			<form class="form-horizontal row-fluid" name="insertproduct" method="post" enctype="multipart/form-data">
-
+			<form class="form-horizontal row-fluid" name="insertproduct" method="Post" enctype="multipart/form-data">
+			@csrf
 <div class="control-group">
 <label class="control-label" for="basicinput">Category</label>
 <div class="controls">
@@ -104,7 +104,7 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Price After Discount(Selling Price)</label>
 <div class="controls">
-<input type="text"    name="productprice"  placeholder="Enter Product Price" class="span8 tip" required>
+<input type="text"    name="productpricead"  placeholder="Enter Product Price" class="span8 tip" required>
 </div>
 </div>
 
