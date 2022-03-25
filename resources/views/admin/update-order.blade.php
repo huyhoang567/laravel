@@ -14,7 +14,7 @@
  <form action="update?id={{$row -> id}}" id="updateticket" method="post">
    @csrf
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-
+    <input type="text" name="orderDate" value="{{$row -> orderDate}}" style="display:none">
     <tr height="50">
       <td colspan="2" class="fontkink2" style="padding-left:0px;"><div class="fontpink2"> <b>Cập nhật đơn đặt hàng!</b></div></td>
       

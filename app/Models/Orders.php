@@ -41,8 +41,11 @@ class Orders extends Model
         return $value;
     }
     //update orders theo id
-    public static function postUpdate($status, $id){
-        $value = DB:: update("update orders set orderStatus = '$status' where id = '$id'");
+    public static function postUpdate($status, $id, $orderDate){
+        $value = DB::table("orders")->where('id','=',$id)->update([
+            'orderStatus' => $status,
+            'orderDate' => $orderDate,
+        ]);
         return $value;
     }
 }

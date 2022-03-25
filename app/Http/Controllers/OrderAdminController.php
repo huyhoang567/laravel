@@ -10,7 +10,7 @@ class OrderAdminController extends Controller
 {
     //
     public static function orders (){
-        $title = 'Today Orders';
+        $title = 'Đơn đặt hàng hôm nay';
         $orders = Orders::todayOrders();
 
         return view('admin/today-orders', [
@@ -46,7 +46,9 @@ class OrderAdminController extends Controller
         $id = $request -> all()['id'];
         $order = Orders::updateOrder($id);
         $status = $request -> get('status');
-        $value = Orders::postUpdate($status, $id);
+        $orderDate = $request -> get('orderDate');
+        // dd($orderDate);
+        $value = Orders::postUpdate($status, $id, $orderDate);
         // dd($value);
         if($value == 1){
             echo '<script> alert ("Cập nhật thành công")</script>';

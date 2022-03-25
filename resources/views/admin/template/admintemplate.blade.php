@@ -31,7 +31,7 @@
 				</a>
 
 			  	<a class="brand" href="today-orders">
-			  		Shopping Portal | Admin
+					Cổng mua sắm | Quản trị viên
 			  	</a>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">
@@ -45,9 +45,9 @@
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="admin/change-password">Change Password</a></li>
+								<li><a href="admin/change-password">Đổi mật khẩu</a></li>
 								<li class="divider"></li>
-								<li><a href="logout">Logout</a></li>
+								<li><a href="logout">Đăng xuất</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -104,27 +104,27 @@
 							<li>
 								<a href="manage-users">
 									<i class="menu-icon icon-group"></i>
-									Manage users
+									Quản lý người dùng
 								</a>
 							</li>
 						</ul>
 
 
 						<ul class="widget widget-menu unstyled">
-                                <li><a href="category"><i class="menu-icon icon-tasks"></i> Create Category </a></li>
-                                <li><a href="subcategory"><i class="menu-icon icon-tasks"></i>Sub Category </a></li>
-                                <li><a href="insert-products"><i class="menu-icon icon-paste"></i>Insert Product </a></li>
-                                <li><a href="manage-products"><i class="menu-icon icon-table"></i>Manage Products </a></li>
+                                <li><a href="category"><i class="menu-icon icon-tasks"></i>Tạo danh mục</a></li>
+                                <li><a href="subcategory"><i class="menu-icon icon-tasks"></i>Tạo danh mục con</a></li>
+                                <li><a href="insert-products"><i class="menu-icon icon-paste"></i>Thêm sản phẩm</a></li>
+                                <li><a href="manage-products"><i class="menu-icon icon-table"></i>Quản lý sản phẩm</a></li>
                         
                             </ul><!--/.widget-nav-->
 
 						<ul class="widget widget-menu unstyled">
-							<li><a href="user-logs"><i class="menu-icon icon-tasks"></i>User Login Log </a></li>
+							<li><a href="user-logs"><i class="menu-icon icon-tasks"></i>Nhật ký người dùng đăng nhập</a></li>
 							
 							<li>
 								<a href="logout">
 									<i class="menu-icon icon-signout"></i>
-									Logout
+									Đăng xuất
 								</a>
 							</li>
 						</ul>

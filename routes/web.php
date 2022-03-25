@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderAdminController;
+use App\Http\Controllers\CategoryController;
 use App\Helpers\User;
 use App\Http\Controllers\InsertDataAdminController;
 use App\Http\Controllers\UsersAdminController;
@@ -94,9 +95,9 @@ Route::post('postLogin', 'App\Http\Controllers\AdminLogin@postLogin');
 // logout
 Route::get('admin/logout', 'App\Http\Controllers\AdminLogin@logout');
 // 
-Route::get('admin/category', function () {
-    return view('admin/category');
-}) -> middleware('checkAdmin');
+Route::get('admin/category', [CategoryController::class, 'getCategory']) -> middleware('checkAdmin');
+Route::get('admin/del-category', [CategoryController::class, 'deleteCategory']) -> middleware('checkAdmin');
+Route::post('admin/postcategory', [CategoryController::class, "createCategory"]);
 Route::get('admin/change-password', function () {
     return view('admin/change-password');
 }) -> middleware('checkAdmin');
@@ -118,25 +119,21 @@ Route::post('admin/update', [OrderAdminController::class, "postUpdate"]);
 Route::get('admin/manage-users', [UsersAdminController::class, 'manage_users']) -> middleware('checkAdmin');
 
 // ======== End
-Route::get('admin/edit-category', function () {
-    return view('admin/edit-category');
-}) -> middleware('checkAdmin');
+Route::get('admin/edit-category', [CategoryController::class, 'editCategory']) -> middleware('checkAdmin');
+Route::post('admin/edit-category', [CategoryController::class, 'updateCategory']) -> middleware('checkAdmin');
 Route::get('admin/edit-products', function () {
     return view('admin/edit-products');
 }) -> middleware('checkAdmin');
-Route::get('admin/edit-subcategory', function () {
-    return view('admin/edit-subcategory');
-}) -> middleware('checkAdmin');
+Route::get('admin/edit-subcategory', [CategoryController::class, 'editSubCategory']) -> middleware('checkAdmin');
+Route::post('admin/edit-subcategory', [CategoryController::class, 'updateSubCategory']) -> middleware('checkAdmin');
 Route::get('admin/insert-products', [InsertDataAdminController::class, 'InsertProductAdmin']) -> middleware('checkAdmin');
 Route::get('admin/manage-products', function () {
     return view('admin/manage-products');
 }) -> middleware('checkAdmin');
 
-Route::get('admin/subcategory', function () {
-    return view('admin/subcategory');
-}) -> middleware('checkAdmin');
-
-
+Route::get('admin/subcategory', [CategoryController::class, 'getSubCategory']) -> middleware('checkAdmin');
+Route::post('admin/postsubcategory', [CategoryController::class, "createSubCategory"]);
+Route::get('admin/del-subcategory', [CategoryController::class, 'deleteSubCategory']) -> middleware('checkAdmin');
 Route::get('admin/update-image1', function () {
     return view('admin/update-image1');
 }) -> middleware('checkAdmin');
