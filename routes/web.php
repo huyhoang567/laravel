@@ -127,6 +127,9 @@ Route::get('admin/edit-products', function () {
 Route::get('admin/edit-subcategory', [CategoryController::class, 'editSubCategory']) -> middleware('checkAdmin');
 Route::post('admin/edit-subcategory', [CategoryController::class, 'updateSubCategory']) -> middleware('checkAdmin');
 Route::get('admin/insert-products', [InsertDataAdminController::class, 'InsertProductAdmin']) -> middleware('checkAdmin');
+
+Route::post('admin/insert-products', [InsertDataAdminController::class, 'submitInserProduct']);
+
 Route::get('admin/manage-products', function () {
     return view('admin/manage-products');
 }) -> middleware('checkAdmin');

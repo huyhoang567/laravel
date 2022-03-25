@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class Products extends Model
-{
+{   
+    protected $table = 'products';
     use HasFactory;
     // Lấy tất cả
     public static function getAll () {
@@ -36,6 +37,9 @@ class Products extends Model
         if(isset($value[0]))
             return $value[0];
         return false;
+    }
+    public static function insertProduct($product){
+        $value= DB::table('products')->insertGetId($product);
     }
 
 }
