@@ -185,3 +185,12 @@ Trạng thái: Xong
 - Admin: admin - password: e10adc3949ba59abbe56e057f20f883e ( chèn các giá trị bên vào bảng admin để đăng nhập)
 
 ******  Vui lòng làm theo các chỉ dẫn, đừng có làm một nẻo như cái Task 4
+
+## - Task 8 - Xuất dữ liệu trang quản lý sản phẩm Admin
+
+- Tạo mới controller ProductsAdminController
+- Thực hiện trong file views/admin/manage-users.blade.php
+- Định tuyến /admin/manage-products
+- Xóa sản phẩm
+- Thêm một action update sản phẩm, thực hiện trong file edit-products.blade.php và contronller đã tạo trên.
+- Validator cho các trường string không được bỏ trống và trên 8 ký tự

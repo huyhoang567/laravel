@@ -18,15 +18,17 @@ class AdminLogin extends Controller
     {
         $username = $request -> get('username');    
         $password = md5($request -> get('password'));
+      
         $admin = Admin::login($username, $password);
         // print_r($admin);
+        
         
         if (count($admin) != 0) {
             session() -> put('admin', $username);
             // dd('Đăng nhập thành công');
             return redirect('admin/today-orders');
         }else{
-            echo '<script> alert ("sai tài khoản hoặc mật khẩu")</script>';
+            echo '<script> alert ("Sai tài khoản hoặc mật khẩu")</script>';
             echo '<meta http-equiv="refresh" content="0; url=admin"/>';
         }
     }

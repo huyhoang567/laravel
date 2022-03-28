@@ -44,9 +44,9 @@
                         {{-- Total money --}}
                         <span class="value">
                             {{
-                                array_reduce($cart->getCart(), function ($a, $b) {
+                                number_format(array_reduce($cart->getCart(), function ($a, $b) {
                                     return $a + $b->productPrice;
-                                })
+                                }))
                             }}
                         </span>
                         <span class="sign">VND</span>
@@ -68,13 +68,16 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="image">
-                                <a href="product-details.php?pid="><img  src="{{ $each->productImage1 }}" width="35" height="50" alt=""></a>
+                                <a href="product-details?productName={{$each->productName}}">
+                                    <img  src="public/productimages/{{$each->id}}/{{$each->productImage1}}" width="35" height="50" 
+                                        alt="{{ $each->productName }}">
+                                </a>
                             </div>
                         </div>
                         <div class="col-xs-7">
                             
                             <h3 class="name"><a href="product-details.php?pid="></a></h3>
-                            <div class="price">{{ $each->productPrice }}</div>
+                            <div class="price">{{ number_format($each->productPrice) }} VND</div>
                         </div>
                     </div>
                     @endforeach
@@ -85,10 +88,10 @@
                     <div class="pull-right">
                         
                             <span class="text">Total :  {{
-                                array_reduce($cart->getCart(), function ($a, $b) {
+                                number_format(array_reduce($cart->getCart(), function ($a, $b) {
                                     return $a + $b->productPrice;
-                                })
-                            }}
+                                }))
+                            }} VND
                             </span>
 
                             <span class='price'>Rs.</span>
@@ -97,7 +100,7 @@
                 
                     <div class="clearfix"></div>
                         
-                    <a href="my-cart.php" class="btn btn-upper btn-primary btn-block m-t-20">My Cart</a>	
+                    <a href="my-cart" class="btn btn-upper btn-primary btn-block m-t-20">My Cart</a>	
                 </div><!-- /.cart-total-->
                     
                 

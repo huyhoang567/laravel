@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Products;
-use App\Services\CartHelper as ServicesCartHelper;
+
 use Illuminate\Contracts\Mail\Mailable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -35,17 +35,5 @@ class HomeController extends Controller {
         ]);
     }
 
-    public function addToCart($productId, ServicesCartHelper $cartService) {
-
-        //...
-        $product = Products::getByProductId($productId);
-        
-        if(!$cartService->existsProduct($product)) {
-            $cartService->pushCart($product);
-        }
-
-
-        return redirect('/home');
-    }
 
 }

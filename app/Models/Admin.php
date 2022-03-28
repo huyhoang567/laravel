@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\DB;
 class Admin extends Model
 {
     use HasFactory;
+    // ... 
     public static function login($username, $password){
+      
         $value = DB::table('admin')
                 ->where('username', '=', $username)
                 ->where('password', '=', $password)

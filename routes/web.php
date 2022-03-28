@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderAdminController;
 use App\Http\Controllers\CategoryController;
 use App\Helpers\User;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\InsertDataAdminController;
 use App\Http\Controllers\UsersAdminController;
 use Illuminate\Http\Request;
@@ -45,9 +46,7 @@ Route::get('/category', function () {
 Route::get('/account', function () {
     return view('my-account');
 });
-Route::get('/my-cart', function () {
-    return view('my-cart');
-});
+Route::get('/my-cart', [CartController::class, 'Cart']);
 Route::get('/my-wishlist', function () {
     return view('my-wishlist');
 });
@@ -77,7 +76,7 @@ Route::get('/track-orders', function () {
 // ============================================   Handle user =============================================================
 
     // Add to cart
-    Route::get('/addToCart/{productId}', [ HomeController::class, 'addToCart' ]);
+    Route::get('/addToCart/{productId}', [ CartController::class, 'addToCart' ]);
 
 // Admin ==================================================================================================================
 
