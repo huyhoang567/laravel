@@ -153,27 +153,27 @@
 							<td>
 								<div class="form-group">
 									<div class="form-group">
-										<label class="info-title" for="customerName">Tên khách hàng
+										<label class="info-title" for="name">Tên khách hàng
 											<span>*</span></label>
 										<input type="text" class="form-control unicase-form-control text-input"
-											id="billingcity" name="customerName" required="required" value="{{old('customerName')}}">
+											id="billingcity" name="name" required="required" value="{{old('name')}}">
 									</div>
 									<div class="form-group">
-										<label class="info-title" for="phone">Số điện thoại
+										<label class="info-title" for="contactno">Số điện thoại
 											<span>*</span></label>
 										<input type="phone" class="form-control unicase-form-control text-input"
-											id="phone" name="phone" value="{{old('phone')}}" required>
+											id="contactno" name="contactno" value="{{old('contactno')}}" required>
 									</div>
 									<div class="form-group">
-										<label class="info-title" for="phone">
+										<label class="info-title" for="shippingAddress">
 											Địa chỉ giao hàng
 											<span>*</span></label>
 										<textarea class="form-control unicase-form-control text-input"
-											name="shippingaddress" required="required">{{old('shippingaddress')}}</textarea>
+											name="shippingAddress" required="required">{{old('shippingAddress')}}</textarea>
 									</div>
 	
 									<button type="submit" name="update"
-										class="btn-upper btn btn-primary checkout-page-button">Đặt ngay</button>
+										class="btn-upper btn btn-primary checkout-page-button">Đặt hàng ngay</button>
 	
 								</div>
 	

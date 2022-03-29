@@ -19,4 +19,25 @@ class Users extends Model
         $value = self::get()->get();
         return $value;
     }
+
+    public static function getByContactno ($phone)  {
+        $value = DB::table('users')->where('contactno', '=', $phone)->get();
+        if(isset($value[0]))
+            return $value[0];
+        return [];
+    }
+
+    public static function getById ($id)  {
+        $value = DB::table('users')->where('id', '=', $id)->get();
+        if(isset($value[0]))
+            return $value[0];
+        return [];
+    }
+
+    public static function insert ($user): string {
+        $value = DB::table('users')->insertGetId($user);
+        if($value)
+            return $value;
+        return false;
+    }
 }
