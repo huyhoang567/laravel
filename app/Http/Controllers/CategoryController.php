@@ -38,12 +38,14 @@ class CategoryController extends Controller
     }
     //
     public function Category(Request $rq) {
-        dd(Session::all());
+        if(!isset($rq->all()['id']))
+            return back();
         // Request
         $categoryId = $rq->all()['id'];
         // Config page
         $title = "Category";
         // Data
+        $category = Category::getAll();
         $subCategory = Category::getSubCategoryById($categoryId);
         $products = Products::getByCategoryId($categoryId);
 
@@ -52,8 +54,12 @@ class CategoryController extends Controller
         // Return
         return view('category', [
             'title' => $title,
+
+            /// ....
             'subCategory' => $subCategory,
             'products' => $products,
+            'category' => $category
+
         ]);
     }
     //create category

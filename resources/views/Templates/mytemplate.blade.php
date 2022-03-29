@@ -39,6 +39,8 @@
 		<link href="resources/views/assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
 		<link rel="stylesheet" href="resources/views/assets/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+		<link type="text/css" href="../resources/views/admin/images/icons/css/font-awesome.css" rel="stylesheet">
+		<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
 		<link rel="shortcut icon" href="resources/views/assets/images/favicon.ico">
 		{{-- Tittle --}}
 		<title>{{ $title }}</title>
@@ -99,7 +101,7 @@
 	<script src="resources/views/assets/js/scripts.js"></script>
 
 	<!-- For demo purposes – can be removed on production -->
-	<script src="switchstylesheet/switchstylesheet.js"></script>
+	{{-- <script src="switchstylesheet/switchstylesheet.js"></script> --}}
 	
 	<script>
 		$(document).ready(function(){ 

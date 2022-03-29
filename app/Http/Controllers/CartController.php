@@ -26,7 +26,7 @@ class CartController extends Controller
         ]);
     }
 
-    public function addToCart($productId, CartHelper $cartService) {
+    public function addToCart_get($productId, CartHelper $cartService) {
 
         //...
         $product = Products::getByProductId($productId);
@@ -37,6 +37,42 @@ class CartController extends Controller
         }
 
 
-        return redirect('/product-details?productName=' . $product->productName);
+        return redirect('/my-cart');
+    }
+    public function addToCart_post( CartHelper $cartService, Request $rq) {
+
+        // dd($rq->all());
+        $productId = $rq->get('id');
+        //...
+        $product = Products::getByProductId($productId);
+        $product->quantity = $rq->get('quantity');
+        
+        if(!$cartService->existsProduct($product)) {
+            $cartService->pushCart($product);
+        }
+
+
+        return redirect('/my-cart');
+    }
+
+    public function update_mycart_post( CartHelper $cartService, Request $rq) {
+
+        
+        $productId = $rq->get('id');
+        $quantity = $rq->get('quantity');
+        //...
+        $cartService->update($productId, $quantity);
+        
+        return redirect('/my-cart');
+    }
+
+    public function delete_mycart( CartHelper $cartService, Request $rq) {
+        
+        
+        $productId = $rq->get('id');
+        //...
+        $cartService->removeProduct($productId);
+        
+        return redirect('/my-cart');
     }
 }

@@ -8,7 +8,7 @@
                 <a href="category?id={{$row->id}}" class="dropdown-toggle">
                     <i class="icon fa fa-desktop fa-fw"></i>
                         <!-- Sud sidebar -->
-                        {{$row->categoryName}}
+                        {{ $row->categoryName }}
                 </a>
                 @endforeach
                 <!-- <a href="category.php?cid=" class="dropdown-toggle">

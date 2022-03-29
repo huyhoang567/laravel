@@ -22,14 +22,15 @@
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th class="cart-romove item">Remove</th>
+								<th class="cart-romove item">Loại bỏ</th>
 								<th class="cart-description item">Image</th>
-								<th class="cart-product-name item">Product Name</th>
+								<th class="cart-product-name item">Tên sản phẩm</th>
 
-								<th class="cart-qty item">Quantity</th>
-								<th class="cart-sub-total item">Price Per unit</th>
-								<th class="cart-sub-total item">Shipping Charge</th>
-								<th class="cart-total last-item">Grandtotal</th>
+								<th class="cart-qty item">Số lượng mua</th>
+								<th class="cart-sub-total item">Đơn giá(VND)</th>
+								<th class="cart-sub-total item">Phí giao hàng(VND)</th>
+								<th class="cart-total last-item">Tổng dự kiến(VND)</th>
+								<th>Hành động</th>
 							</tr>
 						</thead><!-- /thead -->
 						<tfoot>
@@ -48,10 +49,20 @@
 							</tr>
 						</tfoot>
 						<tbody>
+							{{-- Do not delete --}}
+							<form action="delete-mycart" method="POST" style="display: none;">
+								@method('delete')
+								@csrf
+								{{-- <button class="btn-sm btn-danger" type="submit" name="id" value="null"></button> --}}
+							</form>
 							@foreach ($cart->getCart() as $each)
 							<tr>
 								<td class="romove-item">
-									<input type="checkbox" name="remove_code[]" value="" />
+									<form action="delete-mycart" method="POST">
+										@method('delete')
+										@csrf
+										<button class="btn-sm btn-danger" type="submit" name="id" value="{{$each->id}}">Xóa</button>
+									</form>
 								</td>
 								<td class="cart-image">
 									<a class="entry-thumbnail" href="detail.html">
@@ -75,6 +86,8 @@
 									</div><!-- /.row -->
 
 								</td>
+							<form action="update-mycart" method="post">
+								@csrf
 								<td class="cart-product-quantity">
 									<div class="quant-input">
 										<div class="arrows">
@@ -83,7 +96,7 @@
 											<div class="arrow minus gradient"><span class="ir"><i
 														class="icon fa fa-sort-desc"></i></span></div>
 										</div>
-										<input type="text" value="{{$each->quantity}}" name="quantity[]">
+										<input type="text" value="{{$each->quantity}}" name="quantity">
 
 									</div>
 								</td>
@@ -98,6 +111,13 @@
 											{{number_format($each->productPrice*$each->quantity + $each->quantity*$each->shippingCharge)}}
 										</span>
 								</td>
+								<td>
+									<button type="submit" class="btn-sm btn-secondary" name="id" value="{{$each->id}}">
+										<i class="icon-edit"></i>Cập nhật
+									</button>
+
+								</td>
+							</form>
 							</tr>		
 							@endforeach
 						</tbody><!-- /tbody -->

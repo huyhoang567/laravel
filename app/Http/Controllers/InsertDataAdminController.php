@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\SubCategory;
+use App\Models\SubCategory; 
 use Illuminate\Http\Request;
 use App\Models\Products;
+// 
 class InsertDataAdminController extends Controller
 {
     // ...
@@ -24,11 +25,13 @@ class InsertDataAdminController extends Controller
 
         ]);
     }
+
+// 
     public function submitInserProduct(Request $request){
         //Lay cac gia tri product luu vao mang
          $product= [
              "category" =>  $request->category,
-             "subCategory" =>  $request->subCategory,
+             "subcategory" =>  $request->subcategory,
              "productName" =>  $request->productName,
              "productCompany" => $request->productName,
              "productPrice" =>  $request->productpricead,

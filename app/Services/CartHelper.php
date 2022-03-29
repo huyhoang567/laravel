@@ -45,10 +45,28 @@ class CartHelper {
         Session::forget('cart');
     }
 
-    public function removeProduct($product) : void {
+    public function removeProduct($productId) : void {
         $cart = $this->getCart();
+        $newCart = [];
+
+        foreach ($cart as $key => $each) {
+            if($each->id != $productId) {
+                array_push($newCart, $each);
+            }
+        }
+        Session::put('cart', $newCart);
+    }
+
+    public function update ($productId, $quantity): void {
+        $cart = $this->getCart();
+
         
-        $newCart = array_diff($cart, [ $product ]);
+        foreach ($cart as $key => $each) {
+            if($each->id == $productId) {
+                $each->quantity = $quantity;
+                break;
+            }
+        }
         Session::put('cart', $cart);
     }
 }

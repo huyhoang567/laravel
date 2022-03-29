@@ -294,7 +294,10 @@
 
 
 
-							<div class="quantity-container info-container">
+							<form 
+								action="addToCart"
+								class="quantity-container info-container" method="post">
+								@csrf
 								<div class="row">
 
 									<div class="col-sm-2">
@@ -310,16 +313,20 @@
 													<div class="arrow minus gradient"><span class="ir"><i
 																class="icon fa fa-sort-desc"></i></span></div>
 												</div>
-												<input type="text" value="1">
+												<input type="text" name="quantity" value="1">
 											</div>
 										</div>
 									</div>
 
 									<div class="col-sm-7">
+										<button type="submit" name="id" class="btn btn-primary" value="{{$product->id}}">
+											<i class="fa fa-shopping-cart inner-right-vs"></i>
+											ADD TO CART
+										</button>
 
-										<a href="product-details.php?page=product&action=add&id="
+										{{-- <a href="addToCart/{{ $product->id }}"
 											class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i>
-											ADD TO CART</a>
+											ADD TO CART</a> --}}
 
 										<div class="action" style="color:red">Out of Stock</div>
 
@@ -327,7 +334,7 @@
 
 
 								</div><!-- /.row -->
-							</div><!-- /.quantity-container -->
+							</form><!-- /.quantity-container -->
 
 							<div class="product-social-link m-t-20 text-right">
 								<span class="social-label">Share :</span>

@@ -284,8 +284,8 @@
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.{{$row -> productPrice}} 		</span>
-										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}</span>
+					VND.{{number_format($row -> productPrice)}} 		</span>
+										     <span class="price-before-discount">VND.{{$row -> productPriceBeforeDiscount}}</span>
 									
 			</div>
 			

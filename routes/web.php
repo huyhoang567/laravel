@@ -40,9 +40,7 @@ Route::get('/about', function () {
 Route::get('/forgot-password', function () {
     return view('forgot-password');
 });
-Route::get('/category', function () {
-    return view('category');
-});
+Route::get('/category', [CategoryController::class, "Category"]);
 Route::get('/account', function () {
     return view('my-account');
 });
@@ -76,7 +74,10 @@ Route::get('/track-orders', function () {
 // ============================================   Handle user =============================================================
 
     // Add to cart
-    Route::get('/addToCart/{productId}', [ CartController::class, 'addToCart' ]);
+    Route::get('/addToCart/{productId}', [ CartController::class, 'addToCart_get' ]);
+    Route::post('/addToCart', [ CartController::class, 'addToCart_post' ]);
+    Route::post('/update-mycart', [ CartController::class, 'update_mycart_post' ]);
+    Route::delete('/delete-mycart', [ CartController::class, 'delete_mycart' ]);
 
 // Admin ==================================================================================================================
 
