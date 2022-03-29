@@ -121,7 +121,7 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Image1</label>
 <div class="controls">
-<img  src="public/productimages/1/micromax1.jpeg" width="200" height="100"> <a href="update-image1.php?id=">Change Image</a>
+<img  src="../public/productimages/1/micromax1.jpeg" width="200" height="100"> <a href="update-image1.php?id=">Change Image</a>
 </div>
 </div>
 

@@ -39,10 +39,9 @@
 									<div class="shopping-cart-btn">
 										<span class="">
 											<a href="home"
-												class="btn btn-upper btn-primary outer-left-xs">Continue
-												Shopping</a>
-											<input type="submit" name="submit" value="Update shopping cart"
-												class="btn btn-upper btn-primary pull-right outer-right-xs">
+												class="btn btn-upper btn-primary outer-left-xs">
+												Tiếp tục mua sắm
+											</a>
 										</span>
 									</div><!-- /.shopping-cart-btn -->
 								</td>
@@ -103,12 +102,12 @@
 								<td class="cart-product-sub-total">
 									<span class="cart-sub-total-price">{{number_format($each->productPrice)}}</span>
 								</td>
-								<td class="cart-product-sub-total"><span class="cart-sub-total-price">{{number_format($each->shippingCharge)}}.00</span>
+								<td class="cart-product-sub-total"><span class="cart-sub-total-price">{{number_format($each->shippingCharge*$each->quantity)}}</span>
 								</td>
 
 								<td class="cart-product-grand-total"><span
 										class="cart-grand-total-price">
-											{{number_format($each->productPrice*$each->quantity + $each->quantity*$each->shippingCharge)}}
+											{{number_format($each->quantity*($each->productPrice + $each->shippingCharge))}}
 										</span>
 								</td>
 								<td>
@@ -125,116 +124,66 @@
 
 			</div>
 		</div><!-- /.shopping-cart-table -->
-		<div class="col-md-4 col-sm-12 estimate-ship-tax">
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th>
-							<span class="estimate-title">Shipping Address</span>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<div class="form-group">
+		<div class="col-md-8 col-sm-12 estimate-ship-tax">
+			<form action="billing" method="post">
+				@csrf
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>
+								<span class="estimate-title">Đặt hàng trong giỏ</span>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								Chúng tôi sẽ giao hàng ngay khi nhận được đơn hàng.
+								@if(count($errors) > 0)
+									<div class="alert alert-error alert-danger">
+										<button type="button" class="close" data-dismiss="alert">×</button>
+										@foreach($errors -> all() as $error)
+											<strong>{{$error}}</strong><br>
+										@endforeach
+									</div>
+								@endif
+							</td>
+						</tr>
+						<tr>
+							<td>
 								<div class="form-group">
-									<label class="info-title" for="Billing Address">Billing
-										Address<span>*</span></label>
-									<textarea class="form-control unicase-form-control text-input"
-										name="billingaddress" required="required"></textarea>
+									<div class="form-group">
+										<label class="info-title" for="customerName">Tên khách hàng
+											<span>*</span></label>
+										<input type="text" class="form-control unicase-form-control text-input"
+											id="billingcity" name="customerName" required="required" value="{{old('customerName')}}">
+									</div>
+									<div class="form-group">
+										<label class="info-title" for="phone">Số điện thoại
+											<span>*</span></label>
+										<input type="phone" class="form-control unicase-form-control text-input"
+											id="phone" name="phone" value="{{old('phone')}}" required>
+									</div>
+									<div class="form-group">
+										<label class="info-title" for="phone">
+											Địa chỉ giao hàng
+											<span>*</span></label>
+										<textarea class="form-control unicase-form-control text-input"
+											name="shippingaddress" required="required">{{old('shippingaddress')}}</textarea>
+									</div>
+	
+									<button type="submit" name="update"
+										class="btn-upper btn btn-primary checkout-page-button">Đặt ngay</button>
+	
 								</div>
-{{--  --}}
-								<div class="form-group">
-									<label class="info-title" for="Billing State ">Billing State
-										<span>*</span></label>
-									<input type="text" class="form-control unicase-form-control text-input"
-										id="bilingstate" name="bilingstate" value="" required>
-								</div>
-								<div class="form-group">
-									<label class="info-title" for="Billing City">Billing City
-										<span>*</span></label>
-									<input type="text" class="form-control unicase-form-control text-input"
-										id="billingcity" name="billingcity" required="required" value="">
-								</div>
-								<div class="form-group">
-									<label class="info-title" for="Billing Pincode">Billing Pincode
-										<span>*</span></label>
-									<input type="text" class="form-control unicase-form-control text-input"
-										id="billingpincode" name="billingpincode" required="required" value="">
-								</div>
-{{--  --}}
-								<button type="submit" name="update"
-									class="btn-upper btn btn-primary checkout-page-button">Update</button>
-
-							</div>
-
-						</td>
-					</tr>
-				</tbody><!-- /tbody -->
-			</table><!-- /table -->
+	
+							</td>
+						</tr>
+					</tbody><!-- /tbody -->
+				</table><!-- /table -->
+			</form>
 		</div>
 {{--  --}}
-		<div class="col-md-4 col-sm-12 estimate-ship-tax">
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th>
-							<span class="estimate-title">Billing Address</span>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<div class="form-group">
-
-
-								<div class="form-group">
-									<label class="info-title" for="Shipping Address">Shipping
-										Address<span>*</span></label>
-									<textarea class="form-control unicase-form-control text-input"
-										name="shippingaddress"
-										required="required"></textarea>
-								</div>
-
-
-
-								<div class="form-group">
-									<label class="info-title" for="Billing State ">Shipping State
-										<span>*</span></label>
-									<input type="text" class="form-control unicase-form-control text-input"
-										id="shippingstate" name="shippingstate"
-										value="" required>
-								</div>
-								<div class="form-group">
-									<label class="info-title" for="Billing City">Shipping City
-										<span>*</span></label>
-									<input type="text" class="form-control unicase-form-control text-input"
-										id="shippingcity" name="shippingcity" required="required"
-										value="">
-								</div>
-								<div class="form-group">
-									<label class="info-title" for="Billing Pincode">Shipping Pincode
-										<span>*</span></label>
-									<input type="text" class="form-control unicase-form-control text-input"
-										id="shippingpincode" name="shippingpincode" required="required"
-										value="">
-								</div>
-
-
-								<button type="submit" name="shipupdate"
-									class="btn-upper btn btn-primary checkout-page-button">Update</button>
-
-
-
-							</div>
-
-						</td>
-					</tr>
-				</tbody><!-- /tbody -->
-			</table><!-- /table -->
-		</div>
 		<div class="col-md-4 col-sm-12 cart-shopping-total">
 			<table class="table table-bordered">
 				<thead>
