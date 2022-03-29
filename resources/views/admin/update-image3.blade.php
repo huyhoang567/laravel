@@ -28,15 +28,12 @@
 
 									<br />
 
-			<form class="form-horizontal row-fluid" name="insertproduct" method="post" enctype="multipart/form-data">
-
-
-
-
+			<form class="form-horizontal row-fluid"  action="update-image3.php?id={{$products->id}}" name="insertproduct" method="post" enctype="multipart/form-data">
+			@csrf
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Name</label>
 <div class="controls">
-<input type="text"    name="productName"  readonly value="" class="span8 tip" required>
+<input type="text"    name="productName"  readonly value="{{$products->productName}}" class="span8 tip" required>
 </div>
 </div>
 
@@ -44,7 +41,7 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Current Product Image 3</label>
 <div class="controls">
-<img src="productimages/" width="200" height="100"> 
+<img src="../public/productimages/{{$products->id}}/{{$products->productImage3}}" width="200" height="100"> 
 </div>
 </div>
 
@@ -53,7 +50,7 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">New Product Image 3</label>
 <div class="controls">
-<input type="file" name="productimage1" id="productimage1" value="" class="span8 tip" required>
+<input type="file" name="productimage3" id="productimage3" value="" class="span8 tip" required>
 </div>
 </div>
 

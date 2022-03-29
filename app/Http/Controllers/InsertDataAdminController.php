@@ -33,7 +33,7 @@ class InsertDataAdminController extends Controller
              "category" =>  $request->category,
              "subcategory" =>  $request->subcategory,
              "productName" =>  $request->productName,
-             "productCompany" => $request->productName,
+             "productCompany" => $request->productCompany,
              "productPrice" =>  $request->productpricead,
              "productPriceBeforeDiscount" =>  $request->productpricebd,
              "productImage1" =>   $request->file('productimage1')->getClientOriginalName(),
@@ -49,7 +49,6 @@ class InsertDataAdminController extends Controller
          $request->file('productimage1')->move(public_path('productimages/'.$idProduct.''),$request->file('productimage1')->getClientOriginalName());
          $request->file('productimage2')->move(public_path('productimages/'.$idProduct.''),$request->file('productimage2')->getClientOriginalName());
          $request->file('productimage3')->move(public_path('productimages/'.$idProduct.''),$request->file('productimage3')->getClientOriginalName());
-       
         //Goi ham insert product
     
         $title = "Chèn sản phẩm";

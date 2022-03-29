@@ -132,19 +132,22 @@ Route::get('admin/insert-products', [InsertDataAdminController::class, 'InsertPr
 Route::post('admin/insert-products', [InsertDataAdminController::class, 'submitInserProduct']);
 
 Route::get('admin/manage-products',[ProductsAdminController::class,'getAllProducts']) -> middleware('checkAdmin');
-Route::get('admin/edit-products.php',[ProductsAdminController::class,'editProduct']) -> middleware('checkAdmin');
+Route::get('admin/manage-products.php',[ProductsAdminController::class,'deleteProduct']) -> middleware('checkAdmin');
 Route::get('admin/subcategory', [CategoryController::class, 'getSubCategory']) -> middleware('checkAdmin');
 Route::post('admin/postsubcategory', [CategoryController::class, "createSubCategory"]);
 Route::get('admin/del-subcategory', [CategoryController::class, 'deleteSubCategory']) -> middleware('checkAdmin');
-Route::get('admin/update-image1', function () {
-    return view('admin/update-image1');
-}) -> middleware('checkAdmin');
-Route::get('admin/update-image2', function () {
-    return view('admin/update-image2');
-}) -> middleware('checkAdmin');
-Route::get('admin/update-image3', function () {
-    return view('admin/update-image3');
-}) -> middleware('checkAdmin');
+//edit product
+Route::get('admin/edit-products.php',[ProductsAdminController::class,'editProduct']) -> middleware('checkAdmin');
+Route::post('admin/update-product',[ProductsAdminController::class,'updateProduct']) -> middleware('checkAdmin');
+//update image 1
+Route::get('admin/update-image1.php',[ProductsAdminController::class,'updateImage1']) -> middleware('checkAdmin');
+Route::post('admin/update-image1.php',[ProductsAdminController::class,'submitImage1'])-> middleware('checkAdmin');
+//update image 2
+Route::get('admin/update-image2.php',[ProductsAdminController::class,'updateImage2']) -> middleware('checkAdmin');
+Route::post('admin/update-image2.php',[ProductsAdminController::class,'submitImage2'])-> middleware('checkAdmin');
+//update image 3
+Route::get('admin/update-image3.php',[ProductsAdminController::class,'updateImage3']) -> middleware('checkAdmin');
+Route::post('admin/update-image3.php',[ProductsAdminController::class,'submitImage3'])-> middleware('checkAdmin');
 
 Route::get('admin/user-logs', function () {
     return view('admin/user-logs');

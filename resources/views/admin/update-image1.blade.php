@@ -7,6 +7,7 @@
     <title>Product</title>
 </head>
 <body>
+
     @extends('admin.template.admintemplate')
         @section('update-image1')
         <div class="content">
@@ -28,15 +29,13 @@
 
 									<br />
 
-			<form class="form-horizontal row-fluid" name="insertproduct" method="post" enctype="multipart/form-data">
-
-
-
-
+			<form class="form-horizontal row-fluid" action="update-image1.php?id={{$products->id}}" name="insertproduct" method="Post" enctype="multipart/form-data">
+			@csrf
+		
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Name</label>
 <div class="controls">
-<input type="text"    name="productName"  readonly value="" class="span8 tip" required>
+<input type="text" name="productName"  readonly value="{{$products->productName}}" class="span8 tip" required>
 </div>
 </div>
 
@@ -44,7 +43,7 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Current Product Image1</label>
 <div class="controls">
-<img src="productimages/" width="200" height="100"> 
+<img src="../public/productimages/{{$products->id}}/{{$products->productImage1}}" width="200" height="100"> 
 </div>
 </div>
 

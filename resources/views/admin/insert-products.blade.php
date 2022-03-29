@@ -84,34 +84,34 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Name</label>
 <div class="controls">
-<input type="text"    name="productName"  placeholder="Enter Product Name" class="span8 tip" required>
+<input type="text" minlength="8"    name="productName"  placeholder="Enter Product Name" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Company</label>
 <div class="controls">
-<input type="text"    name="productCompany"  placeholder="Enter Product Comapny Name" class="span8 tip" required>
+<input type="text"  minlength="8"    name="productCompany"  placeholder="Enter Product Comapny Name" class="span8 tip" required>
 </div>
 </div>
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Price Before Discount</label>
 <div class="controls">
-<input type="text"    name="productpricebd"  placeholder="Enter Product Price" class="span8 tip" required>
+<input type="number"    name="productpricebd"  placeholder="Enter Product Price" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Price After Discount(Selling Price)</label>
 <div class="controls">
-<input type="text"    name="productpricead"  placeholder="Enter Product Price" class="span8 tip" required>
+<input type="number"    name="productpricead"  placeholder="Enter Product Price" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Description</label>
 <div class="controls">
-<textarea  name="productDescription"  placeholder="Enter Product Description" rows="6" class="span8 tip">
+<textarea minlength="8"    name="productDescription"  placeholder="Enter Product Description" rows="6" class="span8 tip">
 </textarea>  
 </div>
 </div>
@@ -119,7 +119,7 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Shipping Charge</label>
 <div class="controls">
-<input type="text"    name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="span8 tip" required>
+<input type="number"    name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="span8 tip" required>
 </div>
 </div>
 

@@ -51,5 +51,43 @@ class Products extends Model
                 ->get();
         return $value;
     }
-
+    //update image 1
+    public static function updImage1($id, $image1Name){
+        $value = DB::table('products')
+                    ->where('id', $id)
+                    ->update([
+                        'productImage1'=>$image1Name,
+                    ]);
+        return $value;
+    }
+      //update image 2
+    public static function updImage2($id, $image1Name){
+        $value = DB::table('products')
+                    ->where('id', $id)
+                    ->update([
+                        'productImage2'=>$image1Name,
+                    ]);
+        return $value;
+    }
+      //update image 3
+    public static function updImage3($id, $image1Name){
+        $value = DB::table('products')
+                    ->where('id', $id)
+                    ->update([
+                        'productImage3'=>$image1Name,
+                    ]);
+        return $value;
+    }
+    public static function updateProduct($product,$id){
+        $value= DB::table('products')
+                ->where('id', $id)
+               ->update($product);
+return $value;
+    }
+    public static function deleteProduct($id){
+        $value = DB::table('products')
+        ->where('id','=',$id)
+        ->delete();
+        return $value;
+    }
 }
