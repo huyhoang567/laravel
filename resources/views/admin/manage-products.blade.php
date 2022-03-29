@@ -7,9 +7,13 @@
     <title>Product</title>
 </head>
 <body>
+	
     @extends('admin.template.admintemplate')
         @section('manage-products')
         <div class="content">
+<?php 
+
+?>
 
 	<div class="module">
 							<div class="module-head">
@@ -33,6 +37,8 @@
 											<th>Product Name</th>
 											<th>Category </th>
 											<th>Subcategory</th>
+											<th>Price</th>
+											<th>Availability</th>
 											<th>Company Name</th>
 											<th>Product Creation Date</th>
 											<th>Action</th>
@@ -40,19 +46,21 @@
 									</thead>
 									<tbody>
 
-								
+									@foreach($products as $row)
 										<tr>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td>{{$row->id}} </td>
+											<td>{{$row->productName}}</td>
+											<td>{{$row->categoryName}}</td>
+											<td>{{$row->subcategory}}</td>
+											<td> {{$row->productPrice}}</td>
+											<td> {{$row->productAvailability}}</td>
+											<td>{{$row->productCompany}}</td>
+											<td>{{$row->postingDate}}</td>
 											<td>
-											<a href="edit-products.php?id=" ><i class="icon-edit"></i></a>
+											<a href="edit-products.php?id={{$row->id}}" ><i class="icon-edit"></i></a>
 											<a href="manage-products.php?id=&del=delete" onClick="return confirm('Are you sure you want to delete?')"><i class="icon-remove-sign"></i></a></td>
 										</tr>
-										
+									@endforeach
 										
 								</table>
 							</div>

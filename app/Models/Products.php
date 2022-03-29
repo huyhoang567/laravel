@@ -40,6 +40,16 @@ class Products extends Model
     }
     public static function insertProduct($product){
         $value= DB::table('products')->insertGetId($product);
+        return $value;
+    }
+    //lấy sản phẩm để chỉnh sữa 
+    public static function getAllProductEdit(){
+        $value =DB::table('products')
+                ->join('category','products.category', '=', 'category.id')
+                ->join('subcategory','products.subCategory', '=', 'subcategory.id')
+                ->select('products.*','category.categoryName','subcategory.subcategory')
+                ->get();
+        return $value;
     }
 
 }
