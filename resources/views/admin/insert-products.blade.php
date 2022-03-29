@@ -60,7 +60,7 @@
 			<form class="form-horizontal row-fluid" name="insertproduct" method="Post" enctype="multipart/form-data">
 			@csrf
 <div class="control-group">
-<label class="control-label" for="basicinput">Category</label>
+<label class="control-label" for="basicinput">Tên danh mục</label>
 <div class="controls">
 <select  id="category" onchange="getSub()" name="category" class="span8 tip"   required>
 <option value="">Select Category</option> 
@@ -73,7 +73,7 @@
 
 									
 <div class="control-group">
-<label class="control-label" for="basicinput">Sub Category</label>
+<label class="control-label" for="basicinput">Danh mục con</label>
 <div class="controls">
 <select   name="subcategory"  id="subcategory" class="span8 tip" required>
 </select>
@@ -82,34 +82,34 @@
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Name</label>
+<label class="control-label" for="basicinput">Tên sản phẩm</label>
 <div class="controls">
 <input type="text" minlength="8"    name="productName"  placeholder="Enter Product Name" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Company</label>
+<label class="control-label" for="basicinput">Tên công ty</label>
 <div class="controls">
 <input type="text"  minlength="8"    name="productCompany"  placeholder="Enter Product Comapny Name" class="span8 tip" required>
 </div>
 </div>
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Price Before Discount</label>
+<label class="control-label" for="basicinput">Giá trước khi giảm</label>
 <div class="controls">
-<input type="number"    name="productpricebd"  placeholder="Enter Product Price" class="span8 tip" required>
+<input type="number"  maxlength="10" min="0"  name="productpricebd"  placeholder="Enter Product Price" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Price After Discount(Selling Price)</label>
+<label class="control-label" for="basicinput">Giá sau khi giảm</label>
 <div class="controls">
-<input type="number"    name="productpricead"  placeholder="Enter Product Price" class="span8 tip" required>
+<input type="number" maxlength="10" minlength="4"   name="productpricead"  placeholder="Enter Product Price" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Description</label>
+<label class="control-label" for="basicinput">Mô tả sản phẩm</label>
 <div class="controls">
 <textarea minlength="8"    name="productDescription"  placeholder="Enter Product Description" rows="6" class="span8 tip">
 </textarea>  
@@ -117,14 +117,14 @@
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Shipping Charge</label>
+<label class="control-label" for="basicinput">Phí vận chuyển</label>
 <div class="controls">
-<input type="number"    name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="span8 tip" required>
+<input type="number" maxlength="10"  min="0"  name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Availability</label>
+<label class="control-label" for="basicinput">Tồn hàng</label>
 <div class="controls">
 <select   name="productAvailability"  id="productAvailability" class="span8 tip" required>
 <option value="">Select</option>
@@ -137,7 +137,7 @@
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Image1</label>
+<label class="control-label" for="basicinput">Hình 1</label>
 <div class="controls">
 <input type="file" name="productimage1" id="productimage1" value="" class="span8 tip" required>
 </div>
@@ -145,7 +145,7 @@
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Image2</label>
+<label class="control-label" for="basicinput">Hình 2</label>
 <div class="controls">
 <input type="file" name="productimage2"  class="span8 tip" required>
 </div>
@@ -154,7 +154,7 @@
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Image3</label>
+<label class="control-label" for="basicinput">Hình 3</label>
 <div class="controls">
 <input type="file" name="productimage3"  class="span8 tip">
 </div>

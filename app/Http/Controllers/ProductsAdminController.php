@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\Validator;
+
 class ProductsAdminController extends Controller
 {
     public static function getAllProducts(){
@@ -87,6 +88,31 @@ class ProductsAdminController extends Controller
     public static function updateProduct(Request $request){
         $id = $request->query(('id'));
         $update = '';  
+        $validator = Validator::make($request->all(), [
+            'category'=> 'required',
+            'subcategory'=> 'required',
+            'productAvailability'=> 'required',
+            'productName' => 'required|min:5',
+            'productDescription' => 'required|min:8',
+            'productCompany' => 'required|min:3',
+            "productprice" => 'required|min:4|max:10',
+            "productpricebd" =>'max:10',
+            "productShippingcharge" => 'max:10',
+        ]);
+       
+        if ($validator -> fails()){
+            echo "<script> alert('Cập nhật không thành công.Vui lòng điền đúng thông tin')</script>";
+            return view('admin.edit-products',[
+                'title'=>'Chỉnh sữa sản phẩm',
+                'products'=>Products::getByProductId($id),
+                'categorys' => Category::getAll(),
+                'subcategories' => SubCategory::getAll(),
+                'update' => $update
+            ]);
+        }
+        else{
+
+        
         $product= [
             "category" =>  $request->category,
             "subcategory" =>  $request->subcategory,
@@ -100,11 +126,6 @@ class ProductsAdminController extends Controller
         ];
         
          $updateProduct = Products::updateProduct($product,$id);
-         if($updateProduct){
-             $update==true;
-         }
-         else
-         $update==false;
          return view('admin.edit-products',[
             'title'=>'Chỉnh sữa sản phẩm',
             'products'=>Products::getByProductId($id),
@@ -112,6 +133,7 @@ class ProductsAdminController extends Controller
             'subcategories' => SubCategory::getAll(),
             'update' => $update
         ]);
+    }
     }
     public static function deleteProduct(Request $request){
         $id = $request->query(('id'));
