@@ -40,15 +40,18 @@ class InsertDataAdminController extends Controller
              "productImage2" =>  $request->file('productimage2')->getClientOriginalName(),
              "productImage3" =>  $request->file('productimage3')->getClientOriginalName(),
              "productDescription" =>  $request->productDescription,
+             "shippingCharge"=>$request->productShippingcharge,
+             "productAvailability"=>$request->productAvailability,
 
          ];
+       $idProduct = Products::insertProduct($product);
          // Tien hanh luu anh public image tam 
-         $request->file('productimage1')->move(storage_path('resources/views/admin/images'),$request->file('productimage1')->getClientOriginalName());
-         $request->file('productimage2')->move(storage_path('resources/views/admin/images'),$request->file('productimage2')->getClientOriginalName());
-         $request->file('productimage3')->move(storage_path('resources/views/admin/images'),$request->file('productimage3')->getClientOriginalName());
+         $request->file('productimage1')->move(public_path('productimages/'.$idProduct.''),$request->file('productimage1')->getClientOriginalName());
+         $request->file('productimage2')->move(public_path('productimages/'.$idProduct.''),$request->file('productimage2')->getClientOriginalName());
+         $request->file('productimage3')->move(public_path('productimages/'.$idProduct.''),$request->file('productimage3')->getClientOriginalName());
        
         //Goi ham insert product
-        Products::insertProduct($product);
+    
         $title = "Chèn sản phẩm";
         // ... Data
         // Return

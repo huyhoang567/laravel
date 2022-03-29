@@ -9,6 +9,7 @@ use App\Helpers\User;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InsertDataAdminController;
 use App\Http\Controllers\UsersAdminController;
+use App\Http\Controllers\ProductsAdminController;
 use Illuminate\Http\Request;
 
 /*
@@ -130,10 +131,8 @@ Route::get('admin/insert-products', [InsertDataAdminController::class, 'InsertPr
 
 Route::post('admin/insert-products', [InsertDataAdminController::class, 'submitInserProduct']);
 
-Route::get('admin/manage-products', function () {
-    return view('admin/manage-products');
-}) -> middleware('checkAdmin');
-
+Route::get('admin/manage-products',[ProductsAdminController::class,'getAllProducts']) -> middleware('checkAdmin');
+Route::get('admin/edit-products.php',[ProductsAdminController::class,'editProduct']) -> middleware('checkAdmin');
 Route::get('admin/subcategory', [CategoryController::class, 'getSubCategory']) -> middleware('checkAdmin');
 Route::post('admin/postsubcategory', [CategoryController::class, "createSubCategory"]);
 Route::get('admin/del-subcategory', [CategoryController::class, 'deleteSubCategory']) -> middleware('checkAdmin');
