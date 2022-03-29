@@ -16,9 +16,11 @@ class Ordertrackhistory extends Migration
         Schema::create('ordertrackhistory', function (Blueprint $table) {
             $table->increments('id')->autoIncrement(5);
             $table->integer('orderId')->nullable();
-            $table->string('status',255)->nullable();
-            $table->mediumText('remark');
-            $table->timestamp('postingDate')->nullable(false)->useCurrent()->useCurrentOnUpdate();
+            $table->string('productId',255)->nullable();
+            $table->integer('quantity')->nullable();
+            // $table->string('status',255)->nullable();
+            // $table->mediumText('remark');
+            // $table->timestamp('postingDate')->nullable(false)->useCurrent()->useCurrentOnUpdate();
         });
     }
 

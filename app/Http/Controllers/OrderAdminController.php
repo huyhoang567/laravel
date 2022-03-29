@@ -12,7 +12,7 @@ class OrderAdminController extends Controller
     public static function orders (){
         $title = 'Đơn đặt hàng hôm nay';
         $orders = Orders::todayOrders();
-
+        // dd($orders);
         return view('admin/today-orders', [
             'title' => $title,
             'orders' => $orders
@@ -31,6 +31,7 @@ class OrderAdminController extends Controller
     }
     public static function pendingOrder (){
         $pendingorder = Orders::pendingOrder();
+        // dd($pendingorder);
         return view('admin/pending-orders',[
             'pendingorder' => $pendingorder
         ]);

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Orders;
+use App\Models\Ordertrackhistory;
 use App\Models\Users;
 use App\Services\CartHelper;
 use App\Services\User;
@@ -28,17 +30,40 @@ class BillingController extends Controller
             if($check -> fails()) {
                 $user = Users::getByContactno($rq->get('contactno'));
                 $userService->setUser($user);
-                return redirect('home');
             } else {
-                $user = [
+                $userInsert = [
                     'name' => $rq->get('name'),
                     'contactno' => $rq->get('contactno'),
                     'shippingAddress' => $rq->get('shippingAddress'),
                     'billingAddress' => ''
                 ];
-                $userId = Users::insert($user);
-                dd($userId);
+                $userId = Users::insert($userInsert);
+                $user = Users::getById($userId);
+                $userService->setUser($user);
             }
+            // ... insert order
+            $order = [
+                'userId' => $userService->getUser()->id,
+                'paymentMethod' => '',
+                'orderStatus' => 'Đang chờ',
+                'remark' => 'Khách đang chờ giao hàng'
+            ];
+            $idOrder = Orders::insert($order);
+
+            if($idOrder) {
+                foreach ($cartHelper->getCart() as $key => $pro) {
+                    $ordertrack = [
+                        'orderId' => $idOrder,
+                        'productId' => $pro->id,
+                        'quantity' => $pro->quantity
+                    ];
+                    $idOT = Ordertrackhistory::insert($ordertrack);
+                }
+            }
+
+
+
+            return redirect('home');
         }
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use App\Services\CartHelper;
+use App\Services\User;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -22,7 +23,8 @@ class CartController extends Controller
             'title' => $title,
 
             //...
-            'cart'=> new CartHelper()
+            'cart'=> new CartHelper(),
+            'user' => new User()
         ]);
     }
 

@@ -16,11 +16,12 @@ class Orders extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id')->autoIncrement(7);
             $table->integer('userId')->nullable();
-            $table->string('productId',255)->nullable();
-            $table->integer('quantity')->nullable();
+            // $table->string('productId',255)->nullable();
+            // $table->integer('quantity')->nullable();
             $table->timestamp('orderDate')->nullable(false)->useCurrent()->useCurrentOnUpdate();
             $table->string('paymentMethod',50)->nullable();
             $table->string('orderStatus',55)->nullable();
+            $table->mediumText('remark');
         });
     }
 

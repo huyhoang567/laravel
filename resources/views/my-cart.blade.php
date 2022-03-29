@@ -156,20 +156,26 @@
 										<label class="info-title" for="name">Tên khách hàng
 											<span>*</span></label>
 										<input type="text" class="form-control unicase-form-control text-input"
-											id="billingcity" name="name" required="required" value="{{old('name')}}">
+											id="billingcity" name="name" required="required" 
+											value="@if ($user->existsUser()) {{$user->getUser()->name}} @else {{old('name')}}  @endif"
+										>
 									</div>
 									<div class="form-group">
 										<label class="info-title" for="contactno">Số điện thoại
 											<span>*</span></label>
 										<input type="phone" class="form-control unicase-form-control text-input"
-											id="contactno" name="contactno" value="{{old('contactno')}}" required>
+											id="contactno" name="contactno" required
+											value="@if ($user->existsUser()) {{$user->getUser()->contactno}} @else {{old('contactno')}}  @endif"	
+										>
 									</div>
 									<div class="form-group">
 										<label class="info-title" for="shippingAddress">
 											Địa chỉ giao hàng
 											<span>*</span></label>
 										<textarea class="form-control unicase-form-control text-input"
-											name="shippingAddress" required="required">{{old('shippingAddress')}}</textarea>
+											name="shippingAddress" required="required"
+										>@if ($user->existsUser()) {{$user->getUser()->shippingAddress}} @else {{old('shippingAddress')}}  @endif
+										</textarea>
 									</div>
 	
 									<button type="submit" name="update"

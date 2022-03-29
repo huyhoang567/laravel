@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\DB;
 class Orders extends Model
 {
     use HasFactory;
+
+
+
+    // ...
+    public static function insert($order) {
+        $orderId = DB::table('orders')->insertGetId($order);
+        return $orderId;
+    }
+    // ...
     public static function getAll(){
         $value = DB::table('orders') -> get();
         return $value;
@@ -20,7 +29,17 @@ class Orders extends Model
         $t1="23:59:59";
         $to=date('Y-m-d')." ".$t1;
 
-        $value = DB::select("select users.name as username,users.email as useremail,users.contactno as usercontact,users.shippingAddress as shippingaddress,users.shippingCity as shippingcity,users.shippingState as shippingstate,users.shippingPincode as shippingpincode,products.productName as productname,products.shippingCharge as shippingcharge,orders.quantity as quantity,orders.orderDate as orderdate,products.productPrice as productprice,orders.id as id  from orders join users on  orders.userId=users.id join products on products.id=orders.productId where orders.orderDate between '$from' and '$to'");
+        // $value = DB::select("select users.name as username,users.email as useremail,users.contactno as usercontact,users.shippingAddress as shippingaddress,users.shippingCity as shippingcity,users.shippingState as shippingstate,users.shippingPincode as shippingpincode,products.productName as productname,products.shippingCharge as shippingcharge,orders.quantity as quantity,orders.orderDate as orderdate,products.productPrice as productprice,orders.id as id  from orders join users on  orders.userId=users.id join products on products.id=orders.productId where orders.orderDate between '$from' and '$to'");
+        // $orders = DB::select("select * from users u, orders o where u.id = o.userId and o.orderDate between '$from' and '$to'");
+        $orders = DB::select("select * from users u, orders o where u.id = o.userId and orderStatus = 'Đang chờ'");
+        
+        // ...
+        $value = [];
+        foreach ($orders as $key => $o) {
+            $products = DB::select("select * from ordertrackhistory o, products p  where o.productid = p.id and  o.orderId = '$o->id'");
+            $o->products = $products;
+            array_push($value, $o);
+        }
         return $value;
     }
     //lấy dữ liệu update orders theo id
