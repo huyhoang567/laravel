@@ -42,7 +42,7 @@ class OrderAdminController extends Controller
         ]);
     }
     public static function postUpdate(Request $request){
-
+        
         $id = $request -> all()['id'];
         $order = Orders::updateOrder($id);
         $status = $request -> get('status');

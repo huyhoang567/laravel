@@ -70,9 +70,10 @@
       <td class="fontkink1">Trạng thái: </td>
       <td  class="fontkink"><span class="fontkink1" >
         <select name="status" class="fontkink" required="required" >
-          <option value="">Chọn trạng thái</option>
-                 <option value="in Process">Đang giao</option>
-                  <option value="Delivered">Đã giao</option>
+          {{-- <option value="">Chọn trạng thái</option> --}}
+                 <option value="Đang chờ" @if ($row -> orderStatus == 'Đang chờ') {{'selected'}} @endif >Đang chờ</option>
+                 <option value="Đang giao" @if ($row -> orderStatus == 'Đang giao') {{'selected'}} @endif>Đang giao</option>
+                  <option value="Đã giao" @if ($row -> orderStatus == 'Đã giao') {{'selected'}} @endif>Đã giao</option>
         </select>
         </span></td>
     </tr>

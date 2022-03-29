@@ -123,8 +123,12 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Product Image1</label>
 <div class="controls">
+<<<<<<< HEAD
 <img  src="../public/productimages/{{$products->id}}/{{$products->productImage1}}"  width="200" height="100"> 
  <a href="update-image1.php?id={{$products->id}}">Change Image</a>
+=======
+<img  src="../public/productimages/1/micromax1.jpeg" width="200" height="100"> <a href="update-image1.php?id=">Change Image</a>
+>>>>>>> 01198c749ccf73428ae02130da4e257cd1bb41a0
 </div>
 </div>
 

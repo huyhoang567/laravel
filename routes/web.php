@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderAdminController;
 use App\Http\Controllers\CategoryController;
 use App\Helpers\User;
+use App\Http\Controllers\BillingController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InsertDataAdminController;
 use App\Http\Controllers\UsersAdminController;
@@ -79,6 +80,9 @@ Route::get('/track-orders', function () {
     Route::post('/addToCart', [ CartController::class, 'addToCart_post' ]);
     Route::post('/update-mycart', [ CartController::class, 'update_mycart_post' ]);
     Route::delete('/delete-mycart', [ CartController::class, 'delete_mycart' ]);
+
+    // Đặt hàng
+    Route::post('billing', [BillingController::class, 'billing']);
 
 // Admin ==================================================================================================================
 

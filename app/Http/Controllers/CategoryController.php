@@ -124,7 +124,7 @@ class CategoryController extends Controller
                             'category' => $category,
                             'subcategory' => $subcateory,
                             'create' => true,
-                            'title' => 'Create Category',
+                            'title' => 'Tạo mới Danh mục',
                             'delete' => false,
                         ]);
             }else{
