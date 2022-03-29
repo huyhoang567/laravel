@@ -15,7 +15,7 @@
 
 						<div class="module">
 							<div class="module-head">
-								<h3>Update Product</h3>
+								<h3>Cập nhật sản phẩm</h3>
 							</div>
 							<div class="module-body">
 							<?php
@@ -45,7 +45,7 @@
 			<form class="form-horizontal row-fluid"  action="update-product?id={{$products->id}}"  name="insertproduct" method="post" enctype="multipart/form-data">
 			@csrf
 <div class="control-group">
-<label class="control-label" for="basicinput">Category</label>
+<label class="control-label" for="basicinput">Danh mục</label>
 <div class="controls">
 <select name="category" id='category' class="span8 tip"  onchange="getSub()"  required>
 @foreach ($categorys as $row)
@@ -57,7 +57,7 @@
 
 									
 <div class="control-group">
-<label class="control-label" for="basicinput">Sub Category</label>
+<label class="control-label" for="basicinput">Danh mục con</label>
 <div class="controls">
 <select   name="subcategory"  id="subcategory" class="span8 tip" required>
 </select>
@@ -66,34 +66,34 @@
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Name</label>
+<label class="control-label" for="basicinput">Tên sản phẩm</label>
 <div class="controls">
 <input type="text" minlength="8" name="productName"  placeholder="Enter Product Name" value="{{$products->productName}}" class="span8 tip" >
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Company</label>
+<label class="control-label" for="basicinput">Tên công ty</label>
 <div class="controls">
 <input type="text"  minlength="8"    name="productCompany"  placeholder="Enter Product Comapny Name" value="{{$products->productCompany}}" class="span8 tip" required>
 </div>
 </div>
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Price Before Discount</label>
+<label class="control-label"  for="basicinput">Giảm giá</label>
 <div class="controls">
-<input type="number"   name="productpricebd"  placeholder="Enter Product Price" value="{{$products->productPriceBeforeDiscount}}"  class="span8 tip" required>
+<input type="number" maxlength="10" min="0"  name="productpricebd"  placeholder="Enter Product Price" value="{{$products->productPriceBeforeDiscount}}"  class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Price</label>
+<label class="control-label" for="basicinput">Giá cuối cùng </label>
 <div class="controls">
-<input type="number"    name="productprice"  placeholder="Enter Product Price" value="{{$products->productPrice}}" class="span8 tip" required>
+<input type="number" maxlength="10" minlength="4"    name="productprice"  placeholder="Enter Product Price" value="{{$products->productPrice}}" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Description</label>
+<label class="control-label" for="basicinput">Mô tả sản phẩm</label>
 <div class="controls">
 <textarea  name="productDescription"   minlength="8"  placeholder="Enter Product Description" rows="6" class="span8 tip">
 {{$products->productDescription}}
@@ -102,14 +102,14 @@
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Shipping Charge</label>
+<label class="control-label" for="basicinput">Phí vận chuyển</label>
 <div class="controls">
-<input type="number"  name="productShippingcharge"  placeholder="Enter Product Shipping Charge" value="{{$products->shippingCharge}}" class="span8 tip" required>
+<input type="number"  maxlength="10" min="0"  name="productShippingcharge"  placeholder="Enter Product Shipping Charge" value="{{$products->shippingCharge}}" class="span8 tip" required>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Availability</label>
+<label class="control-label" for="basicinput">Tồn hàg</label>
 <div class="controls">
 <select   name="productAvailability"  id="productAvailability" class="span8 tip" required>
 <option value=""></option>
@@ -121,7 +121,7 @@
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Image1</label>
+<label class="control-label" for="basicinput">Hình 1</label>
 <div class="controls">
 <img  src="../public/productimages/{{$products->id}}/{{$products->productImage1}}"  width="200" height="100"> 
  <a href="update-image1.php?id={{$products->id}}">Change Image</a>
@@ -131,7 +131,7 @@
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Image2</label>
+<label class="control-label" for="basicinput">Hình 2</label>
 <div class="controls">
 <img src="../public/productimages/{{$products->id}}/{{$products->productImage2}}" width="200" height="100"> <a href="update-image2.php?id={{$products->id}}">Change Image</a>
 </div>
@@ -140,7 +140,7 @@
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Product Image3</label>
+<label class="control-label" for="basicinput">Hình 3</label>
 <div class="controls">
 <img src="../public/productimages/{{$products->id}}/{{$products->productImage3}}" width="200" height="100"> <a href="update-image3.php?id={{$products->id}}">Change Image</a>
 </div>
@@ -148,7 +148,7 @@
 
 	<div class="control-group">
 											<div class="controls">
-												<button type="submit" name="submit" class="btn">Update</button>
+												<button type="submit" name="submit" class="btn">Cập nhật</button>
 											</div>
 										</div>
 									</form>

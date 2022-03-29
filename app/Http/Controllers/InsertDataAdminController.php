@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\SubCategory; 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use Illuminate\Support\Facades\Validator;
 // 
 class InsertDataAdminController extends Controller
 {
@@ -29,6 +30,27 @@ class InsertDataAdminController extends Controller
 // 
     public function submitInserProduct(Request $request){
         //Lay cac gia tri product luu vao mang
+        $validator = Validator::make($request->all(), [
+            'category'=> 'required',
+            'subcategory'=> 'required',
+            'productAvailability'=> 'required',
+            'productName' => 'required|min:5',
+            'productDescription' => 'required|min:8',
+            'productCompany' => 'required|min:3',
+            "productpricead" => 'required|min:4|max:10',
+            "productpricebd" =>'max:10',
+            "productShippingcharge" => 'max:10',
+
+        ]);
+        if ($validator -> fails()){
+            echo "<script> alert('Thêm sản phẩm không thành công.Vui lòng điền đúng thông tin')</script>";
+            return view('admin.insert-products',[
+                'title'=>'Thêm sản phẩm',
+                'categorys' => Category::getAll(),
+                'subcategories' => SubCategory::getAll(),
+            ]);
+        }
+        else{
          $product= [
              "category" =>  $request->category,
              "subcategory" =>  $request->subcategory,
@@ -61,6 +83,7 @@ class InsertDataAdminController extends Controller
             'subcategories' => SubCategory::getAll(),
 
         ]);
+    }
         
     }
 }
