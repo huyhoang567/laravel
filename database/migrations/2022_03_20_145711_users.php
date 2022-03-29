@@ -17,7 +17,7 @@ class Users extends Migration
             $table->increments('id')->autoIncrement(4);
             $table->string('name',255)->nullable();
             $table->string('email',255)->nullable();
-            $table->bigInteger('contactno')->nullable();
+            $table->string('contactno')->nullable();
             $table->string('password',255)->nullable();
             $table->longText('shippingAddress');
             $table->string('shippingState',255)->nullable();
