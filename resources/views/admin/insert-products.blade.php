@@ -97,7 +97,7 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Giá trước khi giảm</label>
 <div class="controls">
-<input type="number"  maxlength="10"  name="productpricebd"  placeholder="Enter Product Price" class="span8 tip" required>
+<input type="number"  maxlength="10" min="0"  name="productpricebd"  placeholder="Enter Product Price" class="span8 tip" required>
 </div>
 </div>
 
@@ -119,7 +119,7 @@
 <div class="control-group">
 <label class="control-label" for="basicinput">Phí vận chuyển</label>
 <div class="controls">
-<input type="number" maxlength="10"   name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="span8 tip" required>
+<input type="number" maxlength="10"  min="0"  name="productShippingcharge"  placeholder="Enter Product Shipping Charge" class="span8 tip" required>
 </div>
 </div>
 
