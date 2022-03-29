@@ -65,10 +65,17 @@ class CategoryController extends Controller
     //create category
     public function createCategory(Request $request){
         //xử lý validate
+        $messages = [
+            'category.required' => 'Tên danh mục không được bỏ trống.',
+            'category.unique' => 'Tên danh mục đã tồn tại.',
+            'category.min' => 'Tên danh mục không được ít hơn 6 kí tự.',
+            'description.required' => 'Mô tả không được bỏ trống.',
+            'description.min' => 'Mô tả không được ít hơn 6 kí tự.',
+        ];
         $validator = Validator::make($request->all(), [
             'category' => 'required|unique:category,"categoryName"|min:6',
             'description' => 'required|min:6',
-        ]);
+        ],$messages);
         if ($validator -> fails()){
             return redirect('admin/category')
                     -> withErrors($validator)
@@ -84,8 +91,7 @@ class CategoryController extends Controller
                 $category = Category::getAll();
                 // echo '<script> alert ("Tạo thành công")</script>';
                 // echo '<meta http-equiv="refresh" content="0; url=category"/>';
-                return redirect('admin/category')
-                        ->with([
+                return view('admin/category',[
                             'category' => $category,
                             'create' => true,
                             'title' => 'Create Category',
@@ -100,10 +106,16 @@ class CategoryController extends Controller
     //create subcategory
     public function createSubCategory(Request $request){
         //xử lý validate
+        $messages = [
+            'category.required' => 'Danh mục chưa được chọn.',
+            'subcategory.required' => 'Tên danh mục con không được bỏ trống.',
+            'subcategory.unique' => 'Tên danh mục con đã tồn tại.',
+            'subcategory.min' => 'Tên danh mục con không được ít hơn 6 kí tự.',
+        ];
         $validator = Validator::make($request->all(), [
             'category' => 'required',
             'subcategory' => 'required|unique:subcategory,"subcategory"|min:6',
-        ]);
+        ],$messages);
         if ($validator -> fails()){
             return redirect('admin/subcategory')
                     -> withErrors($validator)
@@ -139,8 +151,7 @@ class CategoryController extends Controller
 
         $delete = Category::del($id);
         $category = Category::getAll();
-        return redirect('admin/category')
-                ->with([
+        return view('admin/category',[
                     'category' => $category,
                     'delete' => true,
                     'create' => false,
@@ -176,10 +187,16 @@ class CategoryController extends Controller
         $id = $request->all('id');
         $category = Category::getById($id);
         //xử lý validate
+        $messages = [
+            'category.required' => 'Tên danh mục không được bỏ trống.',
+            'category.min' => 'Tên danh mục không được ít hơn 6 kí tự.',
+            'description.required' => 'Mô tả không được bỏ trống.',
+            'description.min' => 'Mô tả không được ít hơn 6 kí tự.',
+        ];
         $validator = Validator::make($request->all(), [
             'category' => 'required|min:6',
             'description' => 'required|min:6',
-        ]);
+        ],$messages);
         if ($validator -> fails()){
             return redirect("admin/category")
                     -> withErrors($validator)
@@ -215,9 +232,14 @@ class CategoryController extends Controller
         //lấy dữ liệu edit
         $id = $request->all('id');
         //xử lý validate
+        $messages = [
+            'subcategory.required' => 'Tên danh mục con không được bỏ trống.',
+            'subcategory.unique' => 'Tên danh mục con đã tồn tại.',
+            'subcategory.min' => 'Tên danh mục con không được ít hơn 6 kí tự.',
+        ];
         $validator = Validator::make($request->all(), [
             'subcategory' => 'required|unique:subcategory,"subcategory"|min:6',
-        ]);
+        ],$messages);
         if ($validator -> fails()){
             return redirect("admin/subcategory")
                     -> withErrors($validator)

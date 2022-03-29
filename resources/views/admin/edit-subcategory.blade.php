@@ -22,7 +22,7 @@
                     @if ($update == true)
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert">×</button>
-                            <strong>Well done!</strong>
+                            <strong>Thành công!</strong>
                         </div>
                     @endif
                     <br />
@@ -64,11 +64,8 @@
 							<div class="control-group">
 								<label class="control-label" for="basicinput">Category</label>
 								<div class="controls">
-									<select name="category" class="span8 tip" required>
+									<select name="category" class="span8 tip" disabled>
 										<option value=""></option>
-
-										<option value=""></option>
-
 									</select>
 								</div>
 							</div>
@@ -76,12 +73,12 @@
 								<label class="control-label" for="basicinput">SubCategory Name</label>
 								<div class="controls">
 									<input type="text" placeholder="Enter category Name" name="subcategory" value=""
-										class="span8 tip" required>
+										class="span8 tip" disabled>
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls">
-									<button type="submit" name="submit" class="btn">Update</button>
+									<button type="submit" name="submit" class="btn" disabled>Update</button>
 								</div>
 							</div>
 						</form>

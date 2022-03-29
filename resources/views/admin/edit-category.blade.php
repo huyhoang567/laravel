@@ -20,7 +20,7 @@
 								@if($update == true)
 									<div class="alert alert-success">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Well done!</strong>	
+									<strong>Thành công!</strong>	
 									</div>
 								@endif
 									<br />
@@ -58,7 +58,7 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Tên danh mục</label>
 											<div class="controls">
-												<input type="text" placeholder="Nhập tên danh mục"  name="category" value="" class="span8 tip" required>
+												<input type="text" placeholder="Nhập tên danh mục"  name="category" value="" class="span8 tip" disabled>
 											</div>
 										</div>
 
@@ -66,14 +66,14 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Mô tả</label>
 											<div class="controls">
-												<textarea class="span8" name="description" rows="5"></textarea>
+												<textarea class="span8" name="description" rows="5" disabled></textarea>
 											</div>
 										</div>
 									
 
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" name="submit" class="btn">Cập nhật</button>
+												<button type="submit" name="submit" class="btn" disabled>Cập nhật</button>
 											</div>
 										</div>
 									</form>

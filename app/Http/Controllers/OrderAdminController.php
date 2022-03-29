@@ -51,16 +51,7 @@ class OrderAdminController extends Controller
         // dd($orderDate);
         $value = Orders::postUpdate($status, $id, $orderDate);
         // dd($value);
-        if($value == 1){
-            echo '<script> alert ("Cập nhật thành công")</script>';
-            if ($status == 'Delivered'){
-                echo '<meta http-equiv="refresh" content="0; url=delivered-orders"/>';
-            }else{
-                echo '<meta http-equiv="refresh" content="0; url=pending-orders"/>';
-            }
-        }else{
-            echo '<script> alert ("Cập nhật lỗi")</script>';
-            echo '<meta http-equiv="refresh" content="0; url=today-orders"/>';
-        }
+        echo '<script> alert ("Cập nhật thành công")</script>';
+        echo '<script>window.close()</script>';
     }
 }

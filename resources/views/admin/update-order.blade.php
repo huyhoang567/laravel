@@ -61,7 +61,7 @@
   <td colspan="2"><hr /></td>
 </tr>
 
-<?php $st = 'Delivered'?>
+<?php $st = 'Đã giao'?>
   @if (($row -> orderStatus) == $st)
    <tr><td colspan="2"><b>
       Sản phẩm đã giao </b></td>

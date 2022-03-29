@@ -20,14 +20,14 @@
 								@if($create == true)
 									<div class="alert alert-success">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Well done!</strong>	
+									<strong>Thành công!</strong>	
 									</div>
 								@endif
 								{{-- xuất thông báo đã xóa --}}
 								@if($delete == true)
 									<div class="alert alert-error">
 										<button type="button" class="close" data-dismiss="alert">×</button>
-									<strong>Oh snap!</strong>
+									<strong>Đã xóa!</strong>
 									</div>
 								@endif
 								{{-- xuất lỗi validate --}}
