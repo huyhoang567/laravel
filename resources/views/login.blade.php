@@ -25,21 +25,27 @@
 		<div class="sign-in-page inner-bottom-sm">
 			<div class="row">
 				<!-- Sign-in -->			
-<div class="col-md-6 col-sm-6 sign-in mb-5">
+<div class="col-md-6 col-sm-6 sign-in">
 	<h4 class="">Đăng nhập</h4>
 	<p class="">Đăng nhập đơn giản, chỉ với số điện thoại.</p>
-	<form class="register-form outer-top-xs" method="post">
+	@if (session()->get('msg'))
+		<div class="alert alert-danger">
+			{{session()->get('msg')}}
+		</div>
+	@endif
+	<form class="register-form outer-top-xs" method="post" action="submitlogin">
+		@csrf
 	<span style="color:red;" >
 
 	</span>
 		<div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Số điện thoại <span>*</span></label>
-		    <input type="text" name="contactno" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+		    <label class="info-title" for="contactno">Số điện thoại <span>*</span></label>
+		    <input type="text" name="contactno" class="form-control unicase-form-control text-input" >
 		</div>
 	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button" name="login">ĐI</button>
 	</form>					
 </div> <br><br>
 <!-- Sign-in -->
-
-    @endsection
+<div style="height: 300px;"></div>
+@endsection
 

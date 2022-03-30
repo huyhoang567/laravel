@@ -9,6 +9,7 @@ use App\Helpers\User;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InsertDataAdminController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersAdminController;
 use App\Http\Controllers\ProductsAdminController;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ Route::get('/bill', function () {
         'title' => 'Hóa đơn'
     ]);
 });
+Route::post('/submitlogin', [LoginController::class, 'submitLogin']);
 Route::get('/login', function () {
     return view('login',[
         'title' => 'Đăng nhập'
