@@ -75,7 +75,7 @@
 									<li>
 										<a href="today-orders">
 											<i class="icon-tasks"></i>
-											Đơn hàng hôm nay
+											Đơn hàng đang chờ
  
 											<b class="label orange pull-right"></b>
 											
@@ -84,7 +84,7 @@
 									<li>
 										<a href="pending-orders">
 											<i class="icon-tasks"></i>
-											Đơn hàng chờ xác nhận
+											Đơn hàng đang giao
 <b class="label orange pull-right"></b>
 
 										</a>

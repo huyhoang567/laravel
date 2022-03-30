@@ -23,4 +23,11 @@ class Ordertrackhistory extends Model
         $id = DB::table('ordertrackhistory')->insertGetId($orderhistory);
         return $id;
     }
+    // 
+
+    public static function getDetailOrderById($orderId) {
+        $products = DB::select("select * from ordertrackhistory o, products p  where o.productid = p.id and  o.orderId = '$orderId'");
+        return $products;
+
+    }
 }

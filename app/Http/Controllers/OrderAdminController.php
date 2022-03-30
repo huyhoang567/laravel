@@ -20,13 +20,19 @@ class OrderAdminController extends Controller
     }
     public static function updateOrder (Request $request){
         // $title = 'Update Order';
-        $id = $request -> all()['id'];
+        $id = $request -> get('id');
         $order = Orders::updateOrder($id);
-        $ordertrackhistory = Ordertrackhistory::getId($id);
+
+        if($order == false)
+            return back();
+        else {
+            $order->products = Ordertrackhistory::getDetailOrderById($order->id);
+        }
+        
+        dd($order);
         return view('admin/update-order', [
             // 'title' => $title,
             'order' => $order,
-            'ordertrackhistory' => $ordertrackhistory
         ]);
     }
     public static function pendingOrder (){

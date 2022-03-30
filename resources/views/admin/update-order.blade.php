@@ -61,11 +61,7 @@
   <td colspan="2"><hr /></td>
 </tr>
 
-<?php $st = 'Đã giao'?>
-  @if (($row -> orderStatus) == $st)
-   <tr><td colspan="2"><b>
-      Sản phẩm đã giao </b></td>
-  @else
+
     <tr height="50">
       <td class="fontkink1">Trạng thái: </td>
       <td  class="fontkink"><span class="fontkink1" >
@@ -92,7 +88,7 @@
       <td  class="fontkink"> <input type="submit" name="submit2"  value="Cập nhật"   size="40" style="cursor: pointer;" /> &nbsp;&nbsp;   
       <input name="Submit2" type="submit" class="txtbox4" value="Đóng cửa sổ" onClick="window.close()" style="cursor: pointer;"  /></td>
     </tr>
-  @endif
+ 
 @endforeach
 </table>
  </form>

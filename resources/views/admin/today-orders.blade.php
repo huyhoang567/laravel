@@ -4,7 +4,7 @@
 
 	<div class="module">
 		<div class="module-head">
-			<h3>Đơn hàng hôm nay({{count($orders)}})</h3>
+			<h3>Đơn hàng hôm nay - Đang chờ ({{count($orders)}})</h3>
 		</div>
 		<div class="module-body table">
 			@if(isset($_GET['del']))
@@ -25,9 +25,8 @@
 						<th>Tên khách hàng</th>
 						<th width="50">Email / Số điện thoại</th>
 						<th>Địa chỉ nhận hàng</th>
-						<th>Sản phẩm</th>
-						<th>Số lượng</th>
-						<th>Tổng cộng</th>
+						<th>Sản phẩm/ Số lượng/ Đơn giá</th>
+						<th>Tổng cộng + Phí (VND)</th>
 						<th>Ngày đặt hàng</th>
 						<th>Hành động</th>
 
@@ -50,22 +49,20 @@
 							<table>
 								@foreach ($row->products as $p)
 									<tr>
-										<td>{{ $p->productName }}</td>
+										<td>
+											{{ $p->productName }}
+										</td>
 										<td>{{ $p->quantity }}</td>
+										<td>{{ number_format($p->productPrice) }}</td>
 									</tr>
 								@endforeach
 							</table>
 						</td>
 						<td>
-							<table>
-								@foreach ($row->products as $p)
-									<tr>
-										<td>{{ $p->quantity }}</td>
-									</tr>
-								@endforeach
-							</table>	
+							{{number_format(array_reduce($row->products, function($a, $b) {
+								return $a + $b->quantity*($b->shippingCharge + $b->productPrice);
+							}))}}
 						</td>
-						{{-- <td>{{($row -> quantity) * ($row -> productPrice) + ($row -> shippingCharge)}}</td> --}}
 						<td>{{$row -> orderDate}}</td>
 						<td> <a href="update-order?id={{$row -> id}}" title="Update order" target="_blank"><i
 									class="icon-edit"></i></a>

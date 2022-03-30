@@ -31,7 +31,8 @@ class Orders extends Model
 
         // $value = DB::select("select users.name as username,users.email as useremail,users.contactno as usercontact,users.shippingAddress as shippingaddress,users.shippingCity as shippingcity,users.shippingState as shippingstate,users.shippingPincode as shippingpincode,products.productName as productname,products.shippingCharge as shippingcharge,orders.quantity as quantity,orders.orderDate as orderdate,products.productPrice as productprice,orders.id as id  from orders join users on  orders.userId=users.id join products on products.id=orders.productId where orders.orderDate between '$from' and '$to'");
         // $orders = DB::select("select * from users u, orders o where u.id = o.userId and o.orderDate between '$from' and '$to'");
-        $orders = DB::select("select * from users u, orders o where u.id = o.userId and orderStatus = 'Đang chờ'");
+        $status = 'Đang chờ';
+        $orders = DB::select("select * from users u, orders o where u.id = o.userId and orderStatus = '$status'");
         
         // ...
         $value = [];
@@ -44,19 +45,51 @@ class Orders extends Model
     }
     //lấy dữ liệu update orders theo id
     public static function updateOrder($id){
-        $value = DB::select("select orders.id as id, name, contactno, shippingAddress, orderDate, orderStatus from users, orders where users.id = orders.userId and orders.id = $id");
-        return $value;
+        $value = DB::select("select * from users u, orders o where u.id = o.userId and o.id = '$id'");
+        if(isset($value[0]))
+            return $value[0];
+        return false;
     }
     //lấy dữ liệu pending orders
     public static function pendingOrder (){
-        $status = "Đã giao";
-        $value = DB::select("select users.name as username,users.email as useremail,users.contactno as usercontact,users.shippingAddress as shippingaddress,users.shippingCity as shippingcity,users.shippingState as shippingstate,users.shippingPincode as shippingpincode,products.productName as productname,products.shippingCharge as shippingcharge,orders.quantity as quantity,orders.orderDate as orderdate,products.productPrice as productprice,orders.id as id  from orders join users on  orders.userId=users.id join products on products.id=orders.productId where orders.orderStatus!='$status' or orders.orderStatus is null");
+        $status = 'Đang giao';
+        $orders = DB::select("select * from users u, orders o where u.id = o.userId and orderStatus = '$status'");
+        
+        // ...
+        $value = [];
+        foreach ($orders as $key => $o) {
+            $products = DB::select("select * from ordertrackhistory o, products p  where o.productid = p.id and  o.orderId = '$o->id'");
+            $o->products = $products;
+            array_push($value, $o);
+        }
+        return $value;
+    }
+    //lấy dữ liệu shipping orders
+    public static function shippingOrder (){
+        $status = 'Đang giao';
+        $orders = DB::select("select * from users u, orders o where u.id = o.userId and orderStatus = '$status'");
+        
+        // ...
+        $value = [];
+        foreach ($orders as $key => $o) {
+            $products = DB::select("select * from ordertrackhistory o, products p  where o.productid = p.id and  o.orderId = '$o->id'");
+            $o->products = $products;
+            array_push($value, $o);
+        }
         return $value;
     }
     //lấy dữ liệu delivered orders
     public static function deliveredOrder (){
         $status = "Đã giao";
-        $value = DB::select("select users.name as username,users.email as useremail,users.contactno as usercontact,users.shippingAddress as shippingaddress,users.shippingCity as shippingcity,users.shippingState as shippingstate,users.shippingPincode as shippingpincode,products.productName as productname,products.shippingCharge as shippingcharge,orders.quantity as quantity,orders.orderDate as orderdate,products.productPrice as productprice,orders.id as id  from orders join users on  orders.userId=users.id join products on products.id=orders.productId where orders.orderStatus='$status'");
+        $orders = DB::select("select * from users u, orders o where u.id = o.userId and orderStatus = '$status'");
+        
+        // ...
+        $value = [];
+        foreach ($orders as $key => $o) {
+            $products = DB::select("select * from ordertrackhistory o, products p  where o.productid = p.id and  o.orderId = '$o->id'");
+            $o->products = $products;
+            array_push($value, $o);
+        }
         return $value;
     }
     //update orders theo id

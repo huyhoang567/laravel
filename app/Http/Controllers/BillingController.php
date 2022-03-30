@@ -61,7 +61,7 @@ class BillingController extends Controller
                 }
             }
 
-
+            $cartHelper->removeCart();
 
             return redirect('home');
         }
