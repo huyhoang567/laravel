@@ -2,7 +2,7 @@
     
 namespace App\Http\Controllers;
 use App\Models\Products;
-use App\Services\CartHelper\CartHelper;
+use App\Services\CartHelper;
 use Illuminate\Http\Request;
 
 class ProductController  extends Controller {
