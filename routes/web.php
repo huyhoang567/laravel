@@ -12,6 +12,7 @@ use App\Http\Controllers\InsertDataAdminController;
 use App\Http\Controllers\UsersAdminController;
 use App\Http\Controllers\ProductsAdminController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,10 @@ Route::get('/login', function () {
     return view('login',[
         'title' => 'Đăng nhập'
     ]);
+});
+Route::get('/logout', function () {
+    Session::remove('user');
+    return redirect('home');
 });
 Route::get('/about', function () {
     return view('about');

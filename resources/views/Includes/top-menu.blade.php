@@ -14,6 +14,7 @@
 					<li><a href="my-cart.php"><i class="icon fa fa-shopping-cart"></i>Giỏ hàng</a></li>
 					@if ($user->existsUser())
 					<li><a href="logout"><i class="icon fa fa-sign-out"></i>Đăng xuất</a></li>
+					<li><a><i class="icon fa fa-sign-out"></i>Chào! {{$user->getUser()->name}}</a></li>
 					 @else 
 					 <li><a href="login"><i class="icon fa fa-sign-in"></i>Đăng nhập</a></li>
 					@endif
