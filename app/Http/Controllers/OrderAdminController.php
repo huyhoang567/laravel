@@ -28,8 +28,7 @@ class OrderAdminController extends Controller
         else {
             $order->products = Ordertrackhistory::getDetailOrderById($order->id);
         }
-        
-        dd($order);
+       
         return view('admin/update-order', [
             // 'title' => $title,
             'order' => $order,
