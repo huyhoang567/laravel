@@ -14,12 +14,12 @@
 					<div class="nav-outer">
 						<ul class="navbar-nav nav">
 							<li class="nav-item active dropdown yamm-fw">
-								<a class="nav-link" href="home">Home</a>
+								<a class="nav-link" href="home">Trang chủ</a>
 							</li>
 							<li class="nav-item dropdown yamm">
-								<a class="nav-link" href="about">About Us</a>
+								<a class="nav-link" href="my-cart">Giỏ hàng</a>
 							</li>
-							<li class="nav-item dropdown yamm">
+							{{-- <li class="nav-item dropdown yamm">
 								<a class="nav-link" href="#">Services</a>
 							</li>
 							<li class="nav-item dropdown yamm">
@@ -27,7 +27,7 @@
 							</li>
 							<li class="nav-item dropdown yamm">
 								<a class="nav-link" href="#">Contact Us</a>
-							</li>
+							</li> --}}
 						</ul>
 						
 						<div class="clearfix"></div>				

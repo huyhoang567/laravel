@@ -1,6 +1,8 @@
 <?php
     
 namespace App\Http\Controllers;
+
+use App\Models\Category;
 use App\Models\Products;
 use App\Services\CartHelper;
 use Illuminate\Http\Request;
@@ -24,7 +26,8 @@ class ProductController  extends Controller {
 
             // Data
             'product' => $product,
-            "cart" => new CartHelper()
+            "cart" => new CartHelper(),
+            'category' => Category::getAll()
 
         ]);
     }

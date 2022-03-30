@@ -9,7 +9,7 @@
 	<div class='col-md-3 sidebar col-xs-12 col-sm-12'>
 		<!-- ================================== TOP NAVIGATION ================================== -->
 		<div class="side-menu animate-dropdown outer-bottom-xs">
-			<div class="side-menu animate-dropdown outer-bottom-xs">
+			{{-- <div class="side-menu animate-dropdown outer-bottom-xs">
 				<div class="head"><i class="icon fa fa-align-justify fa-fw"></i>Sub Categories</div>
 				<nav class="yamm megamenu-horizontal" role="navigation">
 
@@ -25,14 +25,14 @@
 
 					</ul>
 				</nav>
-			</div>
+			</div> --}}
 			
-			{{-- @include('Includes.side-bar') --}}
+			@include('Includes.side-bar')
 
 		</div>
 		<!-- ================================== TOP NAVIGATION : END ================================== -->
 		<div class="sidebar-module-container">
-			<h3 class="section-title">shop by</h3>
+			<h3 class="section-title"></h3>
 			<div class="sidebar-filter">
 				<!-- ============================================== SIDEBAR CATEGORY ============================================== -->
 				<div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
@@ -64,7 +64,7 @@
 	</div><!-- /.sidebar -->
 	<div class='col-md-9'>
 		<!-- ========================================== SECTION – HERO ========================================= -->
-
+{{-- 
 		<div id="category" class="category-carousel hidden-xs">
 			<div class="item">
 				<div class="image">
@@ -86,36 +86,41 @@
 					</div><!-- /.caption -->
 				</div><!-- /.container-fluid -->
 			</div>
-		</div>
+		</div> --}}
 
 		<div class="search-result-container">
 			<div id="myTabContent" class="tab-content">
 				<div class="tab-pane active " id="grid-container">
 					<div class="category-product  inner-top-vs">
 						<div class="row">
-
+							@if (count($products) > 0)
+							@foreach ($products as $p)
 							<div class="col-sm-6 col-md-4 wow fadeInUp">
 								<div class="products">
 									<div class="product">
 										<div class="product-image">
 											<div class="image">
-												<a href="product-details.php?pid="><img
+												<a href="product-details?productName={{$p->productName}}">
+													<img
 														src="assets/images/blank.gif"
-														data-echo="admin/productimages//" alt="" width="200"
-														height="300"></a>
+														data-echo="public/productimages/{{$p->id}}/{{$p->productImage1}}" alt="" width="200"
+														height="300">
+													</a>
 											</div><!-- /.image -->
 										</div><!-- /.product-image -->
 
 
 										<div class="product-info text-left">
-											<h3 class="name"><a href="product-details.php?pid="></a></h3>
+											<h3 class="name"><a href="product-details?productName={{$p->productName}}">
+												{{$p->productName}}
+											</a></h3>
 											<div class="rating rateit-small"></div>
 											<div class="description"></div>
 
 											<div class="product-price">
 												<span class="price">
-													Rs. </span>
-												<span class="price-before-discount">Rs. </span>
+													{{number_format($p->productPrice)}} VND </span>
+												<span class="price-before-discount">{{number_format($p->productPriceBeforeDiscount)}} VND </span>
 
 											</div><!-- /.product-price -->
 
@@ -130,7 +135,7 @@
 															data-toggle="dropdown" type="button">
 															<i class="fa fa-shopping-cart"></i>
 														</button>
-														<a href="category.php?page=product&action=add&id=">
+														<a href="addToCart/{{$p->id}}">
 															<button class="btn btn-primary" type="button">Add to
 																cart</button></a>
 
@@ -154,11 +159,16 @@
 									</div>
 								</div>
 							</div>
+							@endforeach
 
+
+							@else
 
 							<div class="col-sm-6 col-md-4 wow fadeInUp">
 								<h3>No Product Found</h3>
 							</div>
+
+							@endif
 
 
 
@@ -173,6 +183,6 @@
 			</div><!-- /.search-result-container -->
 
 		</div><!-- /.col -->
-	</div>
+	
 	<!-- </div> -->
 @endsection

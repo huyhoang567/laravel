@@ -109,7 +109,7 @@
 		<div class="product-image">
 			<div class="image">
 				<a href="product-details/{{$row -> id}}">
-				<img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-echo="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
+				<img  src="public/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-echo="public/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
 			</div><!-- /.image -->			
 
 			                        		   
@@ -123,8 +123,8 @@
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.{{$row -> productPrice}}			</span>
-										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}	</span>
+					VND {{number_format($row -> productPrice)}}			</span>
+										     <span class="price-before-discount">VND {{number_format($row -> productPriceBeforeDiscount)}}	</span>
 									
 			</div><!-- /.product-price -->
 			
@@ -159,7 +159,7 @@
 		<div class="product-image">
 			<div class="image">
 				<a href="product-details/{{$row -> id}}">
-				<img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-echo="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
+				<img  src="public/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-echo="public/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
 			</div><!-- /.image -->			
 
 			                        		   
@@ -173,8 +173,8 @@
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.{{$row -> productPrice}} 			</span>
-										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}</span>
+					VND {{number_format($row -> productPrice)}} 			</span>
+										     <span class="price-before-discount">VND {{number_format($row -> productPriceBeforeDiscount)}}</span>
 									
 			</div><!-- /.product-price -->
 			
@@ -214,7 +214,7 @@
 		<div class="product-image">
 			<div class="image">
 				<a href="product-details.php?pid={{$row -> id}}">
-				<img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
+				<img  src="public/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300" alt=""></a>
 			</div>		
 
 			                        		   
@@ -228,8 +228,8 @@
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.{{$row -> productPrice}}			</span>
-										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}</span>
+					VND {{number_format($row -> productPrice)}}			</span>
+										     <span class="price-before-discount">VND {{number_format($row -> productPriceBeforeDiscount)}}</span>
 									
 			</div>
 			
@@ -272,7 +272,7 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details/{{$row -> id}}"><img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300"></a>
+				<a href="product-details/{{$row -> id}}"><img  src="public/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="180" height="300"></a>
 			</div><!-- /.image -->			                        		   
 		</div><!-- /.product-image -->
 			
@@ -284,8 +284,8 @@
 
 			<div class="product-price">	
 				<span class="price">
-					VND.{{number_format($row -> productPrice)}} 		</span>
-										     <span class="price-before-discount">VND.{{$row -> productPriceBeforeDiscount}}</span>
+					VND {{number_format($row -> productPrice)}} 		</span>
+										     <span class="price-before-discount">VND {{number_format($row -> productPriceBeforeDiscount)}}</span>
 									
 			</div>
 			
@@ -319,7 +319,7 @@
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details/{{$row -> id}}"><img  src="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="300" height="300"></a>
+				<a href="product-details/{{$row -> id}}"><img  src="public/productimages/{{$row -> id}}/{{$row -> productImage1}}"  width="300" height="300"></a>
 			</div><!-- /.image -->			                        		   
 		</div><!-- /.product-image -->
 			
@@ -331,8 +331,8 @@
 
 			<div class="product-price">	
 				<span class="price">
-					Rs.{{$row -> productPrice}}			</span>
-										     <span class="price-before-discount">Rs.{{$row -> productPriceBeforeDiscount}}</span>
+					VND {{number_format($row -> productPrice)}}			</span>
+										     <span class="price-before-discount">VND {{number_format($row -> productPriceBeforeDiscount)}}</span>
 									
 			</div>
 			
@@ -373,8 +373,8 @@
 									<div class="col col-xs-6">
 										<div class="product-image">
 											<div class="image">
-												<a href="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-lightbox="image-1" data-title="{{$row -> productName}}">
-													<img data-echo="resources/views/admin/productimages/{{$row -> id}}/{{$row -> productImage1}}" width="170" height="174" alt="">
+												<a href="public/productimages/{{$row -> id}}/{{$row -> productImage1}}" data-lightbox="image-1" data-title="{{$row -> productName}}">
+													<img data-echo="public/productimages/{{$row -> id}}/{{$row -> productImage1}}" width="170" height="174" alt="">
 													<div class="zoom-overlay"></div>
 												</a>					
 											</div><!-- /.image -->
@@ -387,7 +387,7 @@
 											<div class="rating rateit-small"></div>
 											<div class="product-price">	
 												<span class="price">
-													Rs.{{$row -> productPrice}}
+													VND {{number_format($row -> productPrice)}}
 												</span>
 
 											</div><!-- /.product-price -->

@@ -7,7 +7,7 @@
 <div class="logo">
 <a href="index.php">
     
-    <h2>Gas uy tín</h2>
+    <h2>Điện máy 3H</h2>
 
 </a>
 </div>		

@@ -23,7 +23,7 @@
 
 
 					<!-- ==============================================CATEGORY============================================== -->
-					<div class="sidebar-widget outer-bottom-xs wow fadeInUp">
+					{{-- <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
 						<h3 class="section-title">Category</h3>
 						<div class="sidebar-widget-body m-t-10">
 							<div class="accordion">
@@ -40,7 +40,8 @@
 
 							</div>
 						</div>
-					</div>
+					</div> --}}
+					@include('Includes.side-bar')
 					<!-- ============================================== CATEGORY : END ============================================== -->
 					<!-- ============================================== HOT DEALS ============================================== -->
 					<div class="sidebar-widget hot-deals wow fadeInUp">
@@ -50,8 +51,8 @@
 								<div class="products">
 									<div class="hot-deal-wrapper">
 										<div class="image">
-											<img src="resources/views/admin/productimages/"
-												data-echo="resources/views/admin/productimages/" alt="">
+											<img src="public/productimages/"
+												data-echo="public/productimages/" alt="">
 										</div>
 									</div><!-- /.hot-deal-wrapper -->
 
@@ -118,7 +119,7 @@
 									<a data-lightbox="image-1" data-title="" href="admin/productimages/">
 										<img class="img-responsive" alt="" 
 											src="assets/images/blank.gif"
-											data-echo="resources/views/admin/productimages/{{$product->id}}/{{$product->productImage1}}" 
+											data-echo="public/productimages/{{$product->id}}/{{$product->productImage1}}" 
 											width="370" height="350" />
 									</a>
 								</div>
@@ -127,7 +128,7 @@
 									<a data-lightbox="image-1" data-title="" href="admin/productimages//">
 										<img class="img-responsive" alt="" 
 											src="assets/images/blank.gif"
-											data-echo="resources/views/admin/productimages/{{$product->id}}/{{$product->productImage1}}" 
+											data-echo="public/productimages/{{$product->id}}/{{$product->productImage1}}" 
 											width="370" height="350" />
 									</a>
 								</div><!-- /.single-product-gallery-item -->
@@ -135,7 +136,7 @@
 								<div class="single-product-gallery-item" id="slide2">
 									<a data-lightbox="image-1" data-title="Gallery" href="admin/productimages//">
 										<img class="img-responsive" alt="" src="assets/images/blank.gif"
-											data-echo="resources/views/admin/productimages/{{$product->id}}/{{$product->productImage2}}" 
+											data-echo="public/productimages/{{$product->id}}/{{$product->productImage2}}" 
 											width="370" height="350" />
 									</a>
 								</div><!-- /.single-product-gallery-item -->
@@ -143,7 +144,7 @@
 								<div class="single-product-gallery-item" id="slide3">
 									<a data-lightbox="image-1" data-title="Gallery" href="admin/productimages//">
 										<img class="img-responsive" alt="" src="assets/images/blank.gif"
-											data-echo="resources/views/admin/productimages/{{$product->id}}/{{$product->productImage3}}" 
+											data-echo="public/productimages/{{$product->id}}/{{$product->productImage3}}" 
 											width="370" height="350" />
 									</a>
 								</div>
@@ -159,7 +160,7 @@
 											data-slide="1" href="#slide1">
 											<img class="img-responsive" alt="" 
 												src="assets/images/blank.gif"
-												data-echo="resources/views/admin/productimages/{{$product->id}}/{{$product->productImage1}}"
+												data-echo="public/productimages/{{$product->id}}/{{$product->productImage1}}"
 												height="85" />
 										</a>
 									</div>
@@ -168,7 +169,7 @@
 										<a class="horizontal-thumb" data-target="#owl-single-product" data-slide="2"
 											href="#slide2">
 											<img class="img-responsive" width="85" alt="" src="assets/images/blank.gif"
-												data-echo="resources/views/admin/productimages/{{$product->id}}/{{$product->productImage2}}" />
+												data-echo="public/productimages/{{$product->id}}/{{$product->productImage2}}" />
 										</a>
 									</div>
 									<div class="item">
@@ -176,7 +177,7 @@
 										<a class="horizontal-thumb" data-target="#owl-single-product" data-slide="3"
 											href="#slide3">
 											<img class="img-responsive" width="85" alt="" src="assets/images/blank.gif"
-												data-echo="resources/views/admin/productimages/{{$product->id}}/{{$product->productImage3}}" 
+												data-echo="public/productimages/{{$product->id}}/{{$product->productImage3}}" 
 												height="85" />
 										</a>
 									</div>
@@ -267,8 +268,8 @@
 
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price">Rs. </span>
-											<span class="price-strike">Rs.</span>
+											<span class="price">VND {{number_format($product->productPrice)}} </span>
+											<span class="price-strike">VND {{number_format($product->productPriceBeforeDiscount)}}</span>
 										</div>
 									</div>
 

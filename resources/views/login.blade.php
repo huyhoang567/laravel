@@ -26,7 +26,7 @@
 			<div class="row">
 				<!-- Sign-in -->			
 <div class="col-md-6 col-sm-6 sign-in">
-	<h4 class="">Đăng nhập</h4>
+	<h4 class="">Đăng nhập - Nếu bạn chưa có tài khoản hãy đặt một đơn hàng. Tài khoản sẽ được luu tự động. </h4>
 	<p class="">Đăng nhập đơn giản, chỉ với số điện thoại.</p>
 	@if (session()->get('msg'))
 		<div class="alert alert-danger">
